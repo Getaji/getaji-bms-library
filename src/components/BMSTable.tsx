@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { ParsedTable } from "../common/types";
 import { makeLR2IRUrl, makeMochaUrl } from "../common/bms";
 import "./BMSTable.css";
@@ -22,7 +22,7 @@ export function BMSTable({ table }: Props) {
       <tbody>
         {
           table.folder.map((folder) => (
-            <>
+            <Fragment key={folder.name}>
               <tr className="header">
                 <th colSpan={5}>{folder.name} ({folder.songs.length} Songs)</th>
               </tr>
@@ -45,7 +45,7 @@ export function BMSTable({ table }: Props) {
                   </tr>
                 ))
               }
-            </>
+            </Fragment>
           ))
         }
       </tbody>
