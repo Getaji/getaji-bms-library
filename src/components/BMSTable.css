@@ -1,0 +1,51 @@
+.bmsTable {
+  margin: 0 auto;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.bmsTable .header {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.bmsTable thead .header {
+  background-color: #666666;
+}
+
+.bmsTable tbody .header {
+  background-color: #888888;
+}
+
+.bmsTable th {
+  padding: 8px 4px;
+}
+
+.bmsTable td {
+  color: #333333;
+  padding: 8px 6px;
+}
+
+.bmsTable td a {
+  color: #333333;
+}
+
+.bmsTable thead .lr2irLink,
+.bmsTable thead .mochaLink {
+  width: 60px;
+}
+
+.bmsTable .content .lr2irLink,
+.bmsTable .content .mochaLink {
+  text-align: center;
+}
+
+.bmsTable .content:nth-child(odd) {
+  background-color: #efefef;
+}
+
+.bmsTable .content:nth-child(even) {
+  background-color: #e4e4e4;
+}

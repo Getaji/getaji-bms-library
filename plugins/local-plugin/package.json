@@ -1,0 +1,8 @@
+{
+  "name": "local-plugin",
+  "description": "テーブルの本体JSONを生成したりするローカルプラグイン",
+  "keywords": [],
+  "author": "Getaji",
+  "private": true,
+  "license": "MIT"
+}

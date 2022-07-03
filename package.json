@@ -1,0 +1,46 @@
+{
+  "name": "getaji-bms-library",
+  "version": "0.0.1",
+  "private": true,
+  "description": "getaji's bms library",
+  "author": "Getaji",
+  "scripts": {
+    "dev": "gatsby develop -p 8081",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "gatsby": "^4.17.2",
+    "gatsby-source-filesystem": "^4.17.0",
+    "gatsby-transformer-json": "^4.17.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.45",
+    "@types/prop-types": "^15.7.5",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-helmet": "^6.1.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.19.0",
+    "gatsby-plugin-pnpm": "^1.2.10",
+    "gatsby-plugin-react-helmet": "^5.17.0",
+    "prop-types": "^15.8.1",
+    "react-helmet": "^6.1.0",
+    "typescript": "^4.7.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "ansi-html@<0.0.8": ">=0.0.8",
+      "node-fetch@<2.6.7": ">=2.6.7",
+      "cross-fetch@>=3.0.0 <3.1.5": ">=3.1.5",
+      "ws@>=7.0.0 <7.4.6": ">=7.4.6",
+      "dicer@<=0.3.1": "<0.0.0",
+      "jpeg-js@<0.4.4": ">=0.4.4",
+      "got@<11.8.5": ">=11.8.5"
+    }
+  }
+}
