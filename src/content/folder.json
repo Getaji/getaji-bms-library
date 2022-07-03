@@ -5653,17 +5653,6 @@
 			},
 			{
 				"class": "bms.player.beatoraja.song.SongData",
-				"title": "Her Majesty [Another+]",
-				"genre": "progressive breaks",
-				"artist": "naotyu- / obj:Risky*",
-				"md5": "151c0d2bb94ab56dfb753410ae70598e",
-				"sha256": "bbba4c5a3c53555518222ed79101069a5eab2e2653f3cee2a51632856c73fcee",
-				"content": 2,
-				"stagefile": "queen_stagefile.bmp",
-				"charthash": "bc577c7d70a785cb66d04024871d9ddb3aef2fd87e6332917cbbcffac90811cf"
-			},
-			{
-				"class": "bms.player.beatoraja.song.SongData",
 				"title": "Nhelv",
 				"subtitle": "[ANOTHER]",
 				"genre": "KATASTROPHE",
