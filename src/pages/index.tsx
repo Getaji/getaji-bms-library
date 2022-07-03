@@ -60,7 +60,7 @@ const IndexPage = () => {
     <>
       <Helmet>
         <title>Getaji's BMS Library</title>
-        <meta name="bmstable" content="./table_header.json" />
+        <meta name="bmstable" content="https://getaji-bms-library.pages.dev/table_header.json" />
         <script src="https://kit.fontawesome.com/12c2830556.js" crossOrigin="anonymous"></script>
       </Helmet>
       <main className="app">
