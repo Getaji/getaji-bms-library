@@ -1,5 +1,5 @@
 {
-  "name" : "Getaji's BMSLibrary",
+  "name" : "Getaji's BMS Library",
   "symbol" : "GL",
   "data_url" : "./table_data.json"
 }
