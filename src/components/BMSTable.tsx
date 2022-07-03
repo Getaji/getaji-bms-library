@@ -28,7 +28,7 @@ export function BMSTable({ table }: Props) {
               </tr>
               {
                 folder.songs.map((song) => (
-                  <tr className="content">
+                  <tr className="content" key={song.md5}>
                     <td className="genre">{song.genre}</td>
                     <td className="title">{song.titleFull}</td>
                     <td className="artist">{song.artistFull}</td>
