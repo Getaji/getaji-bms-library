@@ -30,7 +30,6 @@ const IndexPage = () => {
             subartist
             title
             subtitle
-            content
           }
         }
       }
