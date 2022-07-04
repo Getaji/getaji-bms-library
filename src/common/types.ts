@@ -6,11 +6,9 @@ export type Song = {
   subtitle: string;
   artist: string;
   subartist: string;
-  content: number;
 };
 
 export type Table<S extends Partial<Song> = Song> = {
-  id: string;
   name: string;
   folder: {
     name: string;
@@ -19,7 +17,6 @@ export type Table<S extends Partial<Song> = Song> = {
 };
 
 export type ParsedTable<S extends Partial<Song> = Song> = {
-  id: string;
   name: string;
   folder: {
     name: string;

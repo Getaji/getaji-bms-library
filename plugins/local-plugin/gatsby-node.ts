@@ -3,6 +3,7 @@ import { writeFile, copyFile } from "fs/promises";
 import { join as joinPath } from "path";
 
 import type { Table } from "../../src/common/types";
+import { parseAndSaveJSONFile } from "../../src/common/source-json-converter";
 
 const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意"];
 
@@ -73,6 +74,16 @@ async function generateTableDataJson(graphql: CreatePagesArgs["graphql"], baseDi
     writeFile(joinPath(baseDir, "public", "table_data.json"), JSON.stringify(tableSongs)),
     writeFile(joinPath(baseDir, "src", "table_data.json"), JSON.stringify(tableSongs)),
   ]);
+}
+
+export const onPluginInit: GatsbyNode["onPluginInit"] = async () => {
+  console.log("Converting folder.json ...");
+  const result = await parseAndSaveJSONFile(joinPath(process.cwd(), "src/content/folder.json"));
+  if (result) {
+    console.log("Done!");
+  } else {
+    console.log("folder.json has already been converted.");
+  }
 }
 
 export const createPages: GatsbyNode["createPages"] = async ({ graphql, basePath }) => {
