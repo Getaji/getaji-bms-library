@@ -24,7 +24,7 @@ export function BMSTable({ table }: Props) {
           table.folder.map((folder) => (
             <Fragment key={folder.name}>
               <tr className="header">
-                <th colSpan={5}>{folder.name} ({folder.songs.length} Songs)</th>
+                <th colSpan={5}>GL{folder.name} ({folder.songs.length} Songs)</th>
               </tr>
               {
                 folder.songs.map((song) => (
