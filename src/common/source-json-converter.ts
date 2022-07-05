@@ -1,6 +1,5 @@
 import { readFile, writeFile } from "fs/promises";
-import { join } from "path";
-import { ParsedTable, Song, Table } from "./types";
+import { Song, Table } from "./types";
 
 /**
  * beatorajaのカスタムフォルダのJSONオブジェクトから不要なデータを削除して返します。
