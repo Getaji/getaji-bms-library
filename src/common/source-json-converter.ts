@@ -35,11 +35,11 @@ export async function parseJSONFile(filepath: string, encoding: BufferEncoding =
 }
 
 /**
- * beatorajaが出力した folder.json を変換して保存します。
- * 変換の内容は `parseJSON` を参照してください。
- * JSON文字列はフォーマットされずに1行で保存されます。
+ * beatorajaが出力した folder.json を変換して保存する。
+ * 変換の内容は `parseJSON` を参照すること。
+ * JSON文字列はフォーマットされずに1行で保存される。
  * 
- * folder.json が変換済み（文字列が1行かつ末尾改行なし）の場合は変換をスキップします。
+ * folder.json が変換済み（文字列が1行かつ末尾改行なし）の場合は変換をスキップする。
  * 
  * @param filepath folder.jsonのパス
  * @param encoding 文字コード

@@ -12,7 +12,6 @@ type GraphQLResponse = {
   contentJson: Table;
 };
 
-// markup
 const IndexPage = () => {
   const {
     contentJson: rawTable,
