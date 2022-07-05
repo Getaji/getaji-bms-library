@@ -31,7 +31,6 @@ async function generateTableDataJson(graphql: CreatePagesArgs["graphql"], baseDi
       allContentJson {
         edges {
           node {
-            id
             name
             folder {
               name
