@@ -85,22 +85,12 @@ async function generateAndSaveTableData(graphql: CreatePagesArgs["graphql"], bas
 }
 
 /**
- * プラグインの初期化時にカスタムフォルダデータを変換して上書き保存する。
+ * プラグインの初期化時に呼び出される関数。
  * 
- * この処理は開発サーバー起動時と本番ビルド時の両方で実行される。
- * 変換済みの場合はスキップする。
- * 
- * ビルドはマルチプロセスで実行されるので一度のビルドで複数回実行されることがある。
+ * 以前はfolder.jsonのコンバートを行っていたが、外部で行うようにしたので廃止。
  */
-export const onPluginInit: GatsbyNode["onPluginInit"] = async () => {
-  console.log("Converting folder.json ...");
-  const result = await parseAndSaveJSONFile(joinPath(process.cwd(), "src/content/folder.json"));
-  if (result) {
-    console.log("Done!");
-  } else {
-    console.log("folder.json has already been converted.");
-  }
-}
+// export const onPluginInit: GatsbyNode["onPluginInit"] = async () => {
+// }
 
 /**
  * ページの構築・再構築にフックして難易度表データ部JSONを生成し保存する。
