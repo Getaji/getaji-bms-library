@@ -3,7 +3,6 @@ import { writeFile, copyFile } from "fs/promises";
 import { join as joinPath } from "path";
 
 import type { Table } from "../../src/common/types";
-import { parseAndSaveJSONFile } from "../../src/common/source-json-converter";
 
 const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意"];
 
