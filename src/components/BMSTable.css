@@ -2,6 +2,7 @@
   margin: 0 auto;
   table-layout: fixed;
   width: 100%;
+  border-collapse: collapse;
 }
 
 .bmsTable .header {
@@ -26,10 +27,19 @@
 .bmsTable td {
   color: #333333;
   padding: 8px 6px;
+  border: 1px solid #eeeeee;
 }
 
 .bmsTable td a {
   color: #333333;
+}
+
+.bmsTable thead .title {
+  width: 40%;
+}
+
+.bmsTable thead .artist {
+  width: 30%;
 }
 
 .bmsTable thead .lr2irLink,
@@ -47,5 +57,5 @@
 }
 
 .bmsTable .content:nth-child(even) {
-  background-color: #e4e4e4;
+  background-color: #ffffff;
 }
