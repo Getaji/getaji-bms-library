@@ -1,0 +1,19 @@
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: "BIZ UDPゴシック", "Yu Gothic", Meiryo, "Helvetica Neue", Helvetica, "Noto Sans JP", sans-serif;
+}
+
+nav {
+  text-align: center;
+}
+
+header {
+  margin: 20px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+article {
+  margin-top: 60px;
+}
