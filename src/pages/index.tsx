@@ -67,13 +67,13 @@ const IndexPage = () => {
         </header>
         <section>
           <p>
-            BMSで好きな曲の譜面を収集して難易度を推定し分類した表です。推定基準は整理中です。
+            BMSで好きな曲の譜面を収集して難易度を推定し分類した表です。
           </p>
           <p>
-            次期難易度表フォーマットに対応していますが、beatorajaなどの一部環境で正常に読み込めません。<br />
-            また、このページは比較的サイズが大きいため、<a href="./table_header.json">このリンク</a>のURLの利用を推奨します。
+            次期難易度表フォーマットに対応しています。<br />
+            読み込み時間の削減などの目的で<a href="./table_header.json">ヘッダ部のURL</a>をそのまま利用することもできます。
           </p>
-          <p>
+          <p style={{ marginTop: "2em" }}>
             現在作業中です。
           </p>
           <p>
@@ -81,7 +81,7 @@ const IndexPage = () => {
           </p>
         </section>
         <small>
-          表内のジャンル、タイトル、アーティスト名のテキストの権利は各BMS作者に帰属します。<br />
+          表内のジャンル、タイトル、アーティスト名などコンテンツの権利は各BMS作者に帰属します。<br />
           何かあれば
           <a href="https://twitter.com/Getaji" target="_blank" rel="noopener noreferrer">Twitter(@Getaji)</a>
           のDMまでお問い合わせください。
