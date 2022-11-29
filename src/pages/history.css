@@ -17,3 +17,7 @@ header {
 article {
   margin-top: 60px;
 }
+
+article ul {
+  padding-inline-start: 20px;
+}

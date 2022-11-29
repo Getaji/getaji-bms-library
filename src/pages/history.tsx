@@ -16,7 +16,9 @@ const Page = () => {
         <article>
           <section>
             <h1>2022/11/29</h1>
-            <p>ここに今日の更新内容を入れる</p>
+            <ul>
+              <li>楽曲追加: Merry Christmas Mr.Lawrence</li>
+            </ul>
           </section>
         </article>
       </main>
