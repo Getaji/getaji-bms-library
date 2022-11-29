@@ -54,6 +54,10 @@ const IndexPage = () => {
       }),
   };
 
+  const totalSongCount = parsedTable.folder.reduce((acc, cur) => {
+    return acc + cur.songs.length;
+  }, 0);
+
   return (
     <>
       <Helmet>
@@ -67,14 +71,15 @@ const IndexPage = () => {
         </header>
         <section>
           <p>
-            BMSで好きな曲の譜面を収集して難易度を推定し分類した表です。
+            BMSで好きな曲の譜面を収集して難易度を推定し分類した難易度表です。<br />
+            作業中につき、それなりのペースで譜面が追加されたり難易度が変更されたりします。
           </p>
           <p>
             次期難易度表フォーマットに対応しています。<br />
             読み込み時間の削減などの目的で<a href="./table_header.json">ヘッダ部のURL</a>をそのまま利用することもできます。
           </p>
-          <p style={{ marginTop: "2em" }}>
-            現在作業中です。
+          <p>
+            現在の収録数: {totalSongCount}曲
           </p>
           <p>
             <a href="/history">更新履歴（2022/11/29 更新）</a>
@@ -82,9 +87,9 @@ const IndexPage = () => {
         </section>
         <small>
           表内のジャンル、タイトル、アーティスト名などコンテンツの権利は各BMS作者に帰属します。<br />
-          何かあれば
+          難易度の変更提案や掲載取り下げ要請などのお問い合わせは
           <a href="https://twitter.com/Getaji" target="_blank" rel="noopener noreferrer">Twitter(@Getaji)</a>
-          のDMまでお問い合わせください。
+          のDMまでお願いします。
         </small>
         <BMSTable table={parsedTable} />
       </main>

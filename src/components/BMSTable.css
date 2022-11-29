@@ -3,6 +3,8 @@
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.9rem;
+  border: 1px solid #aaaaaa;
 }
 
 .bmsTable .header {
@@ -13,6 +15,7 @@
 }
 
 .bmsTable thead .header {
+  font-size: 1rem;
   background-color: #666666;
 }
 
@@ -21,7 +24,7 @@
 }
 
 .bmsTable th {
-  padding: 8px 4px;
+  padding: 8px;
 }
 
 .bmsTable td {
