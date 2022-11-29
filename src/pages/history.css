@@ -2,6 +2,7 @@ main {
   max-width: 600px;
   margin: 0 auto;
   font-family: "BIZ UDPゴシック", "Yu Gothic", Meiryo, "Helvetica Neue", Helvetica, "Noto Sans JP", sans-serif;
+  font-size: 0.9rem;
 }
 
 nav {
@@ -20,4 +21,8 @@ article {
 
 article ul {
   padding-inline-start: 20px;
+}
+
+article li {
+  margin-block: 8px 0;
 }

@@ -18,6 +18,14 @@ const Page = () => {
             <h1>2022/11/29</h1>
             <ul>
               <li>楽曲追加: Merry Christmas Mr.Lawrence</li>
+              <li>
+                難易度変更:
+                <ul>
+                  <li>☆4→!? Aleph-0 [BEGINNER]</li>
+                  <li>★★2→!? Anger Control [Angry]</li>
+                  <li>☆?→!? Door Nock[enough]</li>
+                </ul>
+              </li>
             </ul>
           </section>
         </article>
