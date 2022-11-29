@@ -19,10 +19,36 @@ article {
   margin-top: 60px;
 }
 
+article h1 {
+  padding-bottom: 4px;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+article h2 {
+  font-size: 1.1rem;
+}
+
 article ul {
   padding-inline-start: 20px;
 }
 
 article li {
   margin-block: 8px 0;
+}
+
+article table {
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid #aaaaaa;
+}
+
+article table th {
+  background-color: #eeeeee;
+}
+
+article table th,
+article table td {
+  padding: 2px 4px;
+  border: 1px solid #cccccc;
 }
