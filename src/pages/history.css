@@ -1,6 +1,6 @@
 main {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 60px;
   font-family: "BIZ UDPゴシック", "Yu Gothic", Meiryo, "Helvetica Neue", Helvetica, "Noto Sans JP", sans-serif;
   font-size: 0.9rem;
 }
@@ -41,6 +41,7 @@ article table {
   margin: 10px 0;
   width: 100%;
   border: 1px solid #aaaaaa;
+  border-collapse: collapse;
 }
 
 article table th {
@@ -49,6 +50,7 @@ article table th {
 
 article table th,
 article table td {
-  padding: 2px 4px;
+  padding: 8px;
   border: 1px solid #cccccc;
+  font-size: 0.8rem;
 }
