@@ -1,8 +1,9 @@
 import type { GatsbyNode, CreatePagesArgs } from "gatsby";
-import { writeFile, copyFile } from "fs/promises";
+import { writeFile, copyFile, readFile } from "fs/promises";
 import { join as joinPath } from "path";
 
 import type { Table } from "../../src/common/types";
+import { createReadStream } from "fs";
 
 const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意"];
 
@@ -104,4 +105,8 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, basePath
 export const onPostBuild: GatsbyNode["onPostBuild"] = async () => {
   // TODO: ビルド出力ディレクトリの変更に対応できるようにする
   await copyFile("./src/table_header.json", "./public/table_header.json");
+
+  const buffer = await readFile("./public/index.html");
+  const html = buffer.toString("utf-8");
+  await writeFile("./public/index.html", html.replace(`data-react-helmet="true" `, ""));
 };
