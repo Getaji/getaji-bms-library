@@ -1,56 +1,64 @@
-main {
+main#history {
   max-width: 600px;
   margin: 0 auto 60px;
   font-family: "BIZ UDPゴシック", "Yu Gothic", Meiryo, "Helvetica Neue", Helvetica, "Noto Sans JP", sans-serif;
   font-size: 0.9rem;
 }
 
-nav {
+#history nav {
   text-align: center;
 }
 
-header {
+#history header {
   margin: 20px;
   text-align: center;
   font-size: 1.6rem;
 }
 
-article {
+#history article {
   margin-top: 60px;
 }
 
-article h1 {
+#history article h1 {
   padding-bottom: 4px;
   font-size: 1.3rem;
   border-bottom: 1px solid #aaaaaa;
 }
 
-article h2 {
+#history article h2 {
   font-size: 1.1rem;
 }
 
-article ul {
+#history article ul {
   padding-inline-start: 20px;
 }
 
-article li {
+#history article li {
   margin-block: 8px 0;
 }
 
-article table {
+#history article table {
   margin: 10px 0;
   width: 100%;
   border: 1px solid #aaaaaa;
   border-collapse: collapse;
 }
 
-article table th {
+#history article table th {
   background-color: #eeeeee;
 }
 
-article table th,
-article table td {
+#history article table th,
+#history article table td {
   padding: 8px;
   border: 1px solid #cccccc;
   font-size: 0.8rem;
+}
+
+#history article table th:last-child {
+  width: 100%;
+}
+
+#history article table th:not(:last-child) {
+  word-break: keep-all;
 }

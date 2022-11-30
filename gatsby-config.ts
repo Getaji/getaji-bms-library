@@ -12,6 +12,7 @@ const config: GatsbyConfig = {
     "gatsby-plugin-pnpm",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-json",
+    `gatsby-transformer-remark`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
