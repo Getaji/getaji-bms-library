@@ -82,7 +82,7 @@ const IndexPage = () => {
             現在の収録数: {totalSongCount}曲
           </p>
           <p>
-            <a href="/history">更新履歴（2022/12/01 更新）</a>
+            <a href="/history">更新履歴（2022/12/03 更新）</a>
           </p>
         </section>
         <small>

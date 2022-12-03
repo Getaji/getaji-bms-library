@@ -1,3 +1,57 @@
+# 2022/12/03
+
+## 区分追加
+
+|区分名|説明|
+|--|--|
+|癖|癖が非常に強い譜面|
+|難|HARD判定の譜面|
+|難+|VERYHARD判定の譜面|
+|低|極端な低TOTALの譜面|
+
+## 楽曲追加
+
+- Akasagarbha
+- Luminaria
+- Shamshir -rough Pt.2-
+- SHERRY FLIP
+- showers
+- Signager
+- slatewood
+- slic.hertz
+- Smiling
+- Snow Black
+- Sparsity/// / /  /  /   /
+- Spider Dance(METTAMETA Remix)
+- stairway to the universe
+- Stargazer
+- Succubus
+- Take The Long Way Home
+- The Front Line II
+- The Last Page
+
+## 譜面追加
+
+| 難易度 | 譜面 |
+| --- | --- |
+|★14|Sunset Toybox [KANITHER]|
+|★18|Sunset Toybox [U・x・U]|
+|癖|Telescope GT(ごめんなさい といつさん)|
+|!?|Telescope [astronomical observation]|
+|★17|Telescope [Meteor]|
+|◆|Telescope [一等星]|
+
+## 難易度変更
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+☆10|☆11|Sakura Fubuki (STANDARD)|
+|★4|★7|Sunset Toybox (\^\^)|
+|★15|★18|Sunset Toybox (\^/\^)|
+|★★1|★★3|Sunset Toybox [DALAYMASTAR]|
+|★13|★1|Sunset Toybox [Sweet]|
+|☆11|☆12|Telescope -RAINBOW ANOTHER-|
+
 # 2022/12/01
 
 ## 楽曲追加
