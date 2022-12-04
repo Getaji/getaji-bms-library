@@ -1,0 +1,41 @@
+article.document {
+  font-size: 0.9rem;
+}
+
+.document h1 {
+  margin-top: 40px;
+  padding-bottom: 4px;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.document h2 {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.document ul {
+  padding-inline-start: 20px;
+}
+
+.document li {
+  margin-block: 8px 0;
+}
+
+.document table {
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid #aaaaaa;
+  border-collapse: collapse;
+}
+
+.document table th {
+  background-color: #eeeeee;
+}
+
+.document table th,
+.document table td {
+  padding: 8px;
+  border: 1px solid #cccccc;
+  font-size: 0.8rem;
+}

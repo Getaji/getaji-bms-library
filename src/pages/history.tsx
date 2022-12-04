@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
+import "./common-document.css";
 import "./history.css";
 
 type GraphQLResponse = {
@@ -32,7 +33,7 @@ const Page = () => {
           <a href="/">トップに戻る</a>
         </nav>
         <header>更新履歴</header>
-        <article>
+        <article className="document">
           <section dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </main>
