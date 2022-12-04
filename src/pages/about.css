@@ -1,0 +1,28 @@
+main#about {
+  max-width: 600px;
+  margin: 0 auto 60px;
+  font-family: "BIZ UDPゴシック", "Yu Gothic", Meiryo, "Helvetica Neue", Helvetica, "Noto Sans JP", sans-serif;
+  font-size: 0.9rem;
+}
+
+#about header {
+  margin: 20px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+#about nav {
+  text-align: center;
+}
+
+#about article {
+  margin-top: 60px;
+}
+
+#about article table th:last-child {
+  width: 100%;
+}
+
+#about article table th:not(:last-child) {
+  word-break: keep-all;
+}
