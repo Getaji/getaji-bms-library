@@ -17,7 +17,7 @@ const Page = () => {
     },
   } = useStaticQuery<GraphQLResponse>(graphql`
     query HistoryQuery {
-      markdownRemark {
+      markdownRemark(frontmatter: {id: {eq: "history"}}) {
         html
       }
     }
