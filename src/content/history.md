@@ -2,6 +2,52 @@
 id: history
 ---
 
+# 2022/12/06
+
+## 楽曲追加
+
+- デネブ・コネクション
+- ハイノド
+- ハッピーフェイクショー
+- ブラーブルー
+- 五月雨に誓う
+- 君の色に染まる
+- 告白/告別 (BMS edit.)
+- 夜明けの少女たち
+- 夢、幻。
+- 夢厭 con eleganza
+- 摩訶幻想マジトリク
+- 未来へ続く道
+- 水晶世界 ～Fracture～
+- 氷笋の誘い
+- 浮世絵横丁
+- 黄昏のメロディア
+
+## 譜面追加
+
+| 難易度 | 譜面 |
+| --- | --- |
+|★3|ハルシネーション [7key Atatather]|
+|★2|ハルシネーション [ANOTHER+]|
+|★8|ハルシネーション [lｕrither]|
+|★18|下水鳴動して鼠一匹 [rather]|
+|★★1|平衡世界 -玄武-|
+|☆12|平衡世界 [ENT]|
+|★5|平衡世界 [働いたら負けnother]|
+|◆|平衡世界 Parallel World [equilibrium]|
+|◎|平衡世界 Parallel World [misther◎]|
+|◆|平衡世界 Parallel World[Reverie]|
+
+## 難易度変更
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+☆11|★18|Life is PIANO [Power is POWER]|
+|★18|★17|プラネット -Galactic-|
+|☆?|★15|下水鳴動して鼠一匹 (SP黒)|
+|★11|★12|平衡世界 Parallel World[HARDEST]|
+|☆2|☆3|平衡世界[Beginner] Parallel World|
+
 # 2022/12/05
 
 ## 楽曲追加
