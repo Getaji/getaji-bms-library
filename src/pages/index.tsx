@@ -85,7 +85,7 @@ const IndexPage = () => {
             <a href="/about">もっと詳しい説明はこちら</a>
           </p>
           <p>
-            <a href="/history">更新履歴（2022/12/06 更新）</a>
+            <a href="/history">更新履歴（2022/12/07 更新）</a>
           </p>
         </section>
         <small>
