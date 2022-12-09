@@ -17,6 +17,14 @@ export type Song = {
   judge: number;
   feature: number;
   notes: number;
+  n: number;
+  ln: number;
+  s: number;
+  ls: number;
+  density: number;
+  peakdensity: number;
+  enddensity: number;
+  total: number;
 };
 
 export type Table<S extends Partial<Song> = Song> = {

@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, PageProps, useStaticQuery } from "gatsby";
 
 import { FOLDER_NAMES } from "../common/common";
 import BMSTable from "../components/BMSTable";
@@ -17,39 +17,45 @@ type GraphQLResponse = {
   };
 };
 
-const IndexPage = () => {
-  const {
-    allFolderJson: {
-      edges,
-    },
-  } = useStaticQuery<GraphQLResponse>(graphql`
-    query IndexPageTableDataQuery {
-      allFolderJson {
-        edges {
-          node {
-            folder
-            md5
-            sha256
-            genre
-            title
-            subtitle
-            artist
-            subartist
-            content
-            level
-            difficulty
-            maxbpm
-            minbpm
-            mainbpm
-            length
-            judge
-            feature
-            notes
-          }
-        }
+export const query = graphql`
+query IndexPageTableDataQuery {
+  allFolderJson {
+    edges {
+      node {
+        folder
+        md5
+        sha256
+        genre
+        title
+        subtitle
+        artist
+        subartist
+        content
+        level
+        difficulty
+        maxbpm
+        minbpm
+        mainbpm
+        length
+        judge
+        feature
+        notes
+        n
+        ln
+        s
+        ls
+        density
+        peakdensity
+        enddensity
+        total
       }
     }
-  `);
+  }
+}
+`
+
+const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
+  const edges = data.allFolderJson.edges;
 
   const table = edges.reduce(
     (acc, cur) => {
