@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import { ParsedTable } from "../common/types";
+import { Song } from "../common/types";
 import { makeLR2IRUrl, makeMochaUrl } from "../common/bms";
 import "./BMSTable.css";
 
 export type Props = {
-  table: ParsedTable;
+  table: [folder: string, songs: Song[]][];
 };
 
 export function BMSTable({ table }: Props) {
@@ -12,6 +12,7 @@ export function BMSTable({ table }: Props) {
     <table className="bmsTable">
       <thead>
         <tr className="header">
+          <th className="level">Lv</th>
           <th className="genre">ジャンル</th>
           <th className="title">タイトル</th>
           <th className="artist">アーティスト</th>
@@ -21,17 +22,18 @@ export function BMSTable({ table }: Props) {
       </thead>
       <tbody>
         {
-          table.folder.map((folder) => (
-            <Fragment key={folder.name}>
+          table.map(([folder, songs]) => (
+            <Fragment key={folder}>
               <tr className="header">
-                <th colSpan={5}>GL{folder.name} ({folder.songs.length} Songs)</th>
+                <th colSpan={6}>GL{folder} ({songs.length} Songs)</th>
               </tr>
               {
-                folder.songs.map((song) => (
-                  <tr className="content" key={song.md5}>
+                songs.map((song) => (
+                  <tr className="content" key={song.md5} data-difficulty={song.difficulty}>
+                    <td className="level">{song.level}</td>
                     <td className="genre">{song.genre}</td>
-                    <td className="title">{song.titleFull}</td>
-                    <td className="artist">{song.artistFull}</td>
+                    <td className="title">{song.title} {song.subtitle}</td>
+                    <td className="artist">{song.artist} {song.subartist}</td>
                     <td className="lr2irLink">
                       <a href={makeLR2IRUrl(song.md5)} target="_blank" rel="noopener noreferrer">
                         <i className="fa-solid fa-link"></i>

@@ -2,26 +2,16 @@ import type { GatsbyNode, CreatePagesArgs } from "gatsby";
 import { writeFile, copyFile, readFile } from "fs/promises";
 import { join as joinPath } from "path";
 
-import type { Table } from "../../src/common/types";
-import { createReadStream } from "fs";
+import type { Song } from "../../src/common/types";
+import { FOLDER_NAMES } from "../../src/common/common";
 
 const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意"];
 
 type GraphQLResponse = {
-  allContentJson: {
-    edges: [
-      {
-        node: Table<{
-          md5: string;
-          sha256: string;
-          genre: string;
-          title: string;
-          subtitle: string;
-          artist: string;
-          subartist: string;
-        }>;
-      }
-    ];
+  allFolderJson: {
+    edges: {
+      node: Song;
+    }[];
   };
 };
 
@@ -32,24 +22,32 @@ type GraphQLResponse = {
  * @param baseDir 保存先のベースディレクトリ（プロジェクトルート想定）
  */
 async function generateAndSaveTableData(graphql: CreatePagesArgs["graphql"], baseDir: string) {
-  const { data: resultData, errors } = await graphql<GraphQLResponse>(`
+  const {
+    data,
+    errors
+  } = await graphql<GraphQLResponse>(`
     query TableDataQuery {
-      allContentJson {
+      allFolderJson {
         edges {
           node {
-            name
-            folder {
-              name
-              songs {
-                genre
-                md5
-                sha256
-                artist
-                subartist
-                title
-                subtitle
-              }
-            }
+            folder
+            md5
+            sha256
+            genre
+            title
+            subtitle
+            artist
+            subartist
+            content
+            level
+            difficulty
+            maxbpm
+            minbpm
+            mainbpm
+            length
+            judge
+            feature
+            notes
           }
         }
       }
@@ -61,19 +59,25 @@ async function generateAndSaveTableData(graphql: CreatePagesArgs["graphql"], bas
     return;
   }
 
-  if (!resultData) return;
+  if (!data) return;
 
-  const { allContentJson: { edges: [{ node: table }] } } = resultData;
+  const {
+    allFolderJson: {
+      edges,
+    },
+  } = data;
 
-  const tableSongs = table.folder
-    .filter((folder) => !EXCLUDE_FOLDERS.includes(folder.name))
-    .flatMap((folder) => folder.songs.map((song) => ({
+  const tableSongs = edges
+    .filter(({ node: song }) => !EXCLUDE_FOLDERS.includes(song.folder))
+    .sort((a, b) => FOLDER_NAMES.indexOf(a.node.folder) - FOLDER_NAMES.indexOf(b.node.folder))
+    .map(({ node: song }) => ({
       md5: song.md5,
       sha256: song.sha256,
-      level: folder.name,
-      title: `${song.title} ${song.subtitle ?? ""}`.trim(),
-      artist: `${song.artist} ${song.subartist ?? ""}`.trim(),
-    })));
+      level: song.folder,
+      title: song.subtitle ? `${song.title} ${song.subtitle}` : song.title,
+      artist: song.subartist ? `${song.artist} ${song.subartist}` : song.artist,
+    }))
+    ;
   
   const tableSongsStr = JSON.stringify(tableSongs);
 

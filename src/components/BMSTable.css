@@ -38,6 +38,10 @@
   color: #333333;
 }
 
+.bmsTable thead .level {
+  width: 22px;
+}
+
 .bmsTable thead .title {
   width: 40%;
 }
@@ -49,6 +53,32 @@
 .bmsTable thead .lr2irLink,
 .bmsTable thead .mochaLink {
   width: 60px;
+}
+
+.bmsTable .content .level {
+  font-family: Impact, Arial, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.bmsTable .content[data-difficulty="1"] .level {
+  color: rgb(10, 153, 10);
+}
+
+.bmsTable .content[data-difficulty="2"] .level {
+  color: rgb(0, 153, 255);
+}
+
+.bmsTable .content[data-difficulty="3"] .level {
+  color: rgb(219, 152, 0);
+}
+
+.bmsTable .content[data-difficulty="4"] .level {
+  color: red;
+}
+
+.bmsTable .content[data-difficulty="5"] .level {
+  color: purple;
 }
 
 .bmsTable .content .lr2irLink,

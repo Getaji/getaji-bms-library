@@ -6,6 +6,17 @@ export type Song = {
   subtitle: string;
   artist: string;
   subartist: string;
+  content: number;
+  folder: string;
+  level: number;
+  difficulty: number;
+  maxbpm: number;
+  minbpm: number;
+  mainbpm: number;
+  length: number;
+  judge: number;
+  feature: number;
+  notes: number;
 };
 
 export type Table<S extends Partial<Song> = Song> = {

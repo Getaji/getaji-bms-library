@@ -2,61 +2,79 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby";
 
-import type { Table, ParsedTable } from "../common/types";
+import { FOLDER_NAMES } from "../common/common";
 import BMSTable from "../components/BMSTable";
+
+import type { Song } from "../common/types";
+
 import "./index.css";
 
-const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意"];
-
 type GraphQLResponse = {
-  contentJson: Table;
+  allFolderJson: {
+    edges: {
+      node: Song;
+    }[];
+  };
 };
 
 const IndexPage = () => {
   const {
-    contentJson: rawTable,
+    allFolderJson: {
+      edges,
+    },
   } = useStaticQuery<GraphQLResponse>(graphql`
     query IndexPageTableDataQuery {
-      contentJson {
-        name
-        folder {
-          name
-          songs {
-            genre
+      allFolderJson {
+        edges {
+          node {
+            folder
             md5
             sha256
-            artist
-            subartist
+            genre
             title
             subtitle
+            artist
+            subartist
+            content
+            level
+            difficulty
+            maxbpm
+            minbpm
+            mainbpm
+            length
+            judge
+            feature
+            notes
           }
         }
       }
     }
   `);
 
-  const parsedTable: ParsedTable = {
-    ...rawTable,
-    folder: rawTable.folder
-      .filter((folder) => !EXCLUDE_FOLDERS.includes(folder.name))
-      .map((folder) => {
-        const songs = folder.songs.map((song) => ({
-          ...song,
-          titleFull: `${song.title} ${song.subtitle ?? ""}`.trim(),
-          artistFull: `${song.artist} ${song.subartist ?? ""}`.trim(),
-        }));
-        songs.sort((a, b) => a.titleFull.localeCompare(b.titleFull, "ja"));
+  const table = edges.reduce(
+    (acc, cur) => {
+      if (cur.node.folder in acc) {
+        acc[cur.node.folder].push(cur.node);
+      }
+      return acc;
+    },
+    Object.fromEntries(FOLDER_NAMES.map((name) => [name, []])) as Record<string, Song[]>,
+  );
 
-        return {
-          ...folder,
-          songs,
-        };
+  const tableEntries = Object.entries(table)
+    .sort(([a], [b]) => {
+      return FOLDER_NAMES.indexOf(a) - FOLDER_NAMES.indexOf(b);
+    })
+    .map(([folder, songs]) => [
+      folder,
+      songs.sort((a, b) => {
+        const titleA = a.title + " " + a.subtitle;
+        const titleB = b.title + " " + b.subtitle;
+        return titleA.localeCompare(titleB, "ja");
       }),
-  };
+    ] as [string, Song[]]);
 
-  const totalSongCount = parsedTable.folder.reduce((acc, cur) => {
-    return acc + cur.songs.length;
-  }, 0);
+  const totalSongCount = edges.length;
 
   return (
     <>
@@ -94,7 +112,7 @@ const IndexPage = () => {
           <a href="https://twitter.com/Getaji" target="_blank" rel="noopener noreferrer">Twitter(@Getaji)</a>
           のDMまでお願いします。
         </small>
-        <BMSTable table={parsedTable} />
+        <BMSTable table={tableEntries} />
       </main>
     </>
   );
