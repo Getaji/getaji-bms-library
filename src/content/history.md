@@ -2,6 +2,56 @@
 id: history
 ---
 
+# 2022/12/09
+
+## 楽曲追加
+
+- Altale
+- work.it
+- 新いかBMSシRchHtりAnbkXyZしKKKKtTけどM早HamNsmL青白いSnPBpRssT常990
+- 黒鳶～こくえん～
+- 星羅征く旅人
+- 運命論
+
+## 譜面追加
+
+| 難易度 | 譜面 |
+| --- | --- |
+|★3|010 - 010 -|
+|★12|010 [KOCHITHER]|
+|★★5|1913 Schneider -Improvision-|
+|◆|Act Beloved [SP NENETHER]|
+|!?|alicemourn [fox]|
+|★5|Always Feel the Same [TITANIC7]|
+|☆?|Angel's Salad [hwat hte fu-?]|
+|☆?|Berry Go!! [ANGELIC]|
+|★★6|Chronomia [40 DIMENSIONS]|
+|癖|Grimheart [mercury]|
+|★★4|Her Majesty -Dictatorship-|
+|★★5|Kakuriyo Dancehall [life]|
+|☆?|戦歌「オルグラリヤ」|
+|★★8|戦歌「オルグラリヤ」|
+|★★5|戦歌「オルグラリヤ」|
+|★★6|戦歌「オルグラリヤ」|
+|★★7|戦歌「オルグラリヤ」|
+|☆?→!?|Angel's Salad [Pressure]|
+
+## 難易度変更
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+|★9|★5|Castorpollux [G]|
+|★★6|☆?|Catalinesie[Providence]|
+
+## 譜面削除
+
+| 難易度 | 譜面 | 理由 |
+| --- | --- | --- |
+|★3|7 colors* [RAINBOW]|修正前差分と思われるため|
+|☆6|Foresta|同難易度帯の無名差分と区別が難しく内容に大差ないため|
+|☆10|Foresta|〃|
+|☆10|Foresta|〃|
+
 # 2022/12/07
 
 大規模な楽曲追加はこれで一旦打ち止めです（多分）
