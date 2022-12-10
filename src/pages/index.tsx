@@ -48,6 +48,8 @@ query IndexPageTableDataQuery {
         peakdensity
         enddensity
         total
+        accuracy
+        comment
       }
     }
   }
@@ -95,15 +97,11 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
         </header>
         <section>
           <p>
-            BMSで好きな曲の譜面を収集して難易度を推定し分類した難易度表です。<br />
-            作業中につき、それなりのペースで譜面が追加されたり難易度が変更されたりします。
+            BMSで好きな曲の譜面を収集して難易度を推定し分類した7鍵用の難易度表です。
           </p>
           <p>
             次期難易度表フォーマットに対応しています。<br />
-            読み込み時間の削減などの目的で<a href="./table_header.json">ヘッダ部のURL</a>をそのまま利用することもできます。
-          </p>
-          <p>
-            現在の収録数: {totalSongCount}曲
+            このページのURLをそのまま管理アプリやBMSプレイヤーに追加して利用できます。
           </p>
           <p>
             <a href="/about">もっと詳しい説明はこちら</a>
@@ -111,13 +109,10 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
           <p>
             <a href="/history">更新履歴（2022/12/09 更新）</a>
           </p>
+          <p>
+            現在の収録数: {totalSongCount}曲
+          </p>
         </section>
-        <small>
-          表内のジャンル、タイトル、アーティスト名などコンテンツの権利は各BMS作者に帰属します。<br />
-          難易度の変更提案や掲載取り下げ要請などのお問い合わせは
-          <a href="https://twitter.com/Getaji" target="_blank" rel="noopener noreferrer">Twitter(@Getaji)</a>
-          のDMまでお願いします。
-        </small>
         <BMSTable table={tableEntries} />
       </main>
     </>

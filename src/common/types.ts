@@ -25,6 +25,8 @@ export type Song = {
   peakdensity: number;
   enddensity: number;
   total: number;
+  accuracy: string;
+  comment: string;
 };
 
 export type Table<S extends Partial<Song> = Song> = {

@@ -23,6 +23,8 @@
 }
 
 .bmsTable tbody .header {
+  position: sticky;
+  top: 0;
   border: 1px solid #aaaaaa;
   border-width: 1px 0;
   font-size: 1rem;
@@ -48,7 +50,7 @@
 }
 
 .bmsTable thead .title {
-  width: 35%;
+  width: 25%;
 }
 
 .bmsTable thead .artist {
@@ -61,7 +63,11 @@
 }
 
 .bmsTable thead .info {
-  width: 300px;
+  width: 290px;
+}
+
+.bmsTable thead .accuracy {
+  width: 2em;
 }
 
 .bmsTable .content .level {
@@ -142,5 +148,33 @@
 .bmsTable .content .info>div {
   display: flex;
   flex-direction: row;
-  gap: 1em;
+  gap: 0.5em;
+}
+
+.bmsTable .content .accuracy {
+  --marker-color: transparent;
+  
+  text-align: center;
+}
+
+.bmsTable .content[data-accuracy="低"] .accuracy {
+  --marker-color: rgb(210, 223, 255);
+}
+
+.bmsTable .content[data-accuracy="中"] .accuracy {
+  --marker-color: rgb(211, 255, 211);
+}
+
+.bmsTable .content[data-accuracy="高"] .accuracy {
+  --marker-color: rgb(255, 233, 214);
+}
+
+.bmsTable .content .accuracy span {
+  padding: 0 2px;
+  /* border-bottom: 3px solid var(--marker-color); */
+  background-color: var(--marker-color);
+}
+
+.bmsTable .content .comment {
+  font-size: 0.8rem;
 }
