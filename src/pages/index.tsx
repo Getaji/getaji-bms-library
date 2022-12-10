@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql, PageProps, useStaticQuery } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 
 import { FOLDER_NAMES } from "../common/common";
 import BMSTable from "../components/BMSTable";
@@ -107,7 +107,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             <a href="/about">もっと詳しい説明はこちら</a>
           </p>
           <p>
-            <a href="/history">更新履歴（2022/12/10 更新）</a>
+            <a href="/history">更新履歴（2022/12/11 更新）</a>
           </p>
           <p>
             現在の収録数: {totalSongCount}曲

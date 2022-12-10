@@ -2,6 +2,24 @@
 id: history
 ---
 
+# 2022/12/11
+
+漏れていた楽曲・譜面を追加しました。
+
+## 楽曲
+
+- duty
+- Edge of bravery
+- Things of Peculiar Nature
+
+## 譜面
+
+- ◎ Caterpillar Song -夢譜皿-
+- ★★7 Distant World [SP LIFE]
+- ★★5 Kakuriyo Dancehall [life]
+- ☆9 ハイノド
+- ☆? 海神寓拝[EX]
+
 # 2022/12/10
 
 ## 楽曲追加
