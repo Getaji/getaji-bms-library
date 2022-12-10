@@ -158,15 +158,15 @@
 }
 
 .bmsTable .content[data-accuracy="低"] .accuracy {
-  --marker-color: rgb(210, 223, 255);
+  --marker-color: rgb(255, 233, 214);
 }
 
 .bmsTable .content[data-accuracy="中"] .accuracy {
-  --marker-color: rgb(211, 255, 211);
+  --marker-color: rgb(210, 223, 255);
 }
 
 .bmsTable .content[data-accuracy="高"] .accuracy {
-  --marker-color: rgb(255, 233, 214);
+  --marker-color: rgb(211, 255, 211);
 }
 
 .bmsTable .content .accuracy span {
