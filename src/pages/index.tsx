@@ -107,7 +107,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             <a href="/about">もっと詳しい説明はこちら</a>
           </p>
           <p>
-            <a href="/history">更新履歴（2022/12/09 更新）</a>
+            <a href="/history">更新履歴（2022/12/10 更新）</a>
           </p>
           <p>
             現在の収録数: {totalSongCount}曲
