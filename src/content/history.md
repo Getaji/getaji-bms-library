@@ -2,6 +2,24 @@
 id: history
 ---
 
+# 2022/12/10
+
+## 楽曲追加
+
+- Blooming
+- Bouquet colore
+- Celestial Axes
+- duty
+- High-Priestess
+- 花たちに希望を
+
+## 譜面追加
+
+| 難易度 | 譜面 |
+| --- | --- |
+|★20|Σxilio[OTHERWORLDY]|
+|★★5|Σxilio[RED INFERNO]|
+
 # 2022/12/09
 
 ## 楽曲追加
