@@ -2,6 +2,38 @@
 id: history
 ---
 
+# 2022/12/12
+
+## 譜面追加
+
+| 難易度 | 譜面 |
+| --- | --- |
+|★★5|Elixir [PURIFY]|
+
+## 難易度変更
+
+難易度設定のミス（裏で管理してる難易度推定データと実際の難易度設定の食い違い）を修正しました。
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+|☆3|☆6|Anzu no Kakkoi Ongaku [SP Normal]|
+|☆11|★18|Life is PIANO [Power is POWER]|
+|☆?|!?|3rd Avenue [Five Dimension]|
+|☆?|!?|3rd Avenue [Secondary Infection]|
+|★13|★11|Aragami [あの日見た世界の名前を僕達はまだ知らない。]|
+|★★4|★★5|Catalinesie -Eclipse-|
+|★★5|★★6|Catalinesie -Genocide-|
+|★13|★12|Catalinesie[AbNormal]|
+|★★7|★★5|Catalinesie [Maryther_LASTBOSS]|
+|★13|★9|Catalinesie[SP Another]|
+|★★1|★★2|Catalinesie[SP INSANE]|
+|◎|☆?|Caterpillar Song -夢譜皿-|
+|★6|★7|Destr0yer -Hope-|
+|★8|★13|Her Majesty [MX ANOTHER]|
+|★4|★★4|Kung-fu Fantasia -メスガキの穴-|
+|★12|★15|Kung-fu Fantasia [仙]|
+|☆10|☆11|Sakura Fubuki (STANDARD)|
+
 # 2022/12/11
 
 漏れていた楽曲・譜面を追加しました。
