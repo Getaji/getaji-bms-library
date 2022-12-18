@@ -2,6 +2,47 @@
 id: history
 ---
 
+# 2022/12/18
+
+## 楽曲追加
+
+- Alicia Story
+- Ceebu Yapp
+- God Morning
+- Hyper Fiber World Spectrum
+- Q33B
+- Skyward Blast
+- WORLD END
+- 「ほしのおうじさま」
+- きのこカフェ
+- ナートゥーラ
+
+## 譜面追加
+
+| 難易度 | 譜面 |
+| --- | --- |
+|★★4|Altale|
+|★1|Life is PIANO|
+|★★5|Life is PIANO [Other]|
+|◆|Life is PIANO 〈is Zindy〉|
+|★★2|Lonely Cat[MM]|
+|★1|Lonely Cat [PAST]|
+|☆?|Lonely Cat [SPECIAL] -EM-|
+|★★4|Lonely Cat [too cold]|
+|★★5|LOSHAXI|
+|★19|LOSHAXI [d3p3nd3nc3]|
+|★★5|LOSHAXI [Vorarephilia]|
+|★7|LOSHAXI [繧医ａ縺ｾ縺帙ｓ+]|
+|★★3|LOSHAXI[莠悟ｺｦ縺ｨ髮｢縺輔↑縺?]|
+|★★4|Love's Remainder -613-|
+|☆?|MARENOL[CRAZY]|
+
+## 難易度変更
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+|☆6|☆7|黒鳶～こくえん～[飛び模様]|
+
 # 2022/12/12
 
 ## 譜面追加
