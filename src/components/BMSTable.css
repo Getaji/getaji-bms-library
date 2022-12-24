@@ -54,7 +54,7 @@
 }
 
 .bmsTable thead .artist {
-  width: 25%;
+  width: 20%;
 }
 
 .bmsTable thead .lr2irLink,
@@ -63,7 +63,7 @@
 }
 
 .bmsTable thead .info {
-  width: 290px;
+  width: 310px;
 }
 
 .bmsTable thead .accuracy {
@@ -141,7 +141,7 @@
 .bmsTable .content .info {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   font-size: 0.7rem;
 }
 
@@ -149,6 +149,43 @@
   display: flex;
   flex-direction: row;
   gap: 0.5em;
+}
+
+.bmsTable .content .info-bpm_notes_time {
+  gap: 1em !important;
+}
+
+.bmsTable .content .info-judge[data-judge="VERYEASY"] .info-judge-text {
+  filter: drop-shadow(0 0 3px limegreen);
+}
+
+.bmsTable .content .info-judge[data-judge="EASY"] .info-judge-text {
+  filter: drop-shadow(0 0 3px limegreen);
+}
+
+.bmsTable .content .info-judge[data-judge="NORMAL"] .info-judge-text {
+  filter: drop-shadow(0 0 3px rgb(155, 173, 255));
+}
+
+.bmsTable .content .info-judge[data-judge="HARD"] .info-judge-text {
+  filter: drop-shadow(0 0 3px rgb(241, 210, 68));
+}
+
+.bmsTable .content .info-judge[data-judge="VERYHARD"] .info-judge-text {
+  filter: drop-shadow(0 0 3px rgb(250, 94, 94));
+}
+
+.bmsTable .content .info-features ul {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bmsTable .content .info-features li:not(:last-child)::after {
+  content: ",";
 }
 
 .bmsTable .content .accuracy {
@@ -174,6 +211,24 @@
   /* border-bottom: 3px solid var(--marker-color); */
   background-color: var(--marker-color);
 }
+
+/* .bmsTable .content[data-accuracy="低"] .accuracy {
+  --marker-color: rgb(211, 152, 145);
+}
+
+.bmsTable .content[data-accuracy="中"] .accuracy {
+  --marker-color: rgb(133, 223, 250);
+}
+
+.bmsTable .content[data-accuracy="高"] .accuracy {
+  --marker-color: rgb(133, 255, 133);
+}
+
+.bmsTable .content .accuracy span {
+  padding: 0 2px;
+  border-bottom: 3px solid var(--marker-color);
+  filter: drop-shadow(0 0 3px var(--marker-color));
+} */
 
 .bmsTable .content .comment {
   font-size: 0.8rem;
