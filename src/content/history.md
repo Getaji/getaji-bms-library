@@ -29,7 +29,7 @@ id: history
 | --- | --- | --- |
 |☆8|☆9|T/U ～chemical beats Selection MIX～ -7key-|
 |☆11|★2|B.L.S.M.C.S. - T4|
-|☆11|☆12|Traveler ~stand aloof~ [KALVADOS]|
+|☆11|☆12|Traveler \~stand aloof\~ [KALVADOS]|
 |☆12|★1|7 colors* [7key EX]|
 |☆12|★1|[line:theta] [ANOTHER]|
 |☆8|☆9|その斯くも美しき紅に (HYPER)|
