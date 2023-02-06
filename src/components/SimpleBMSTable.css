@@ -1,0 +1,239 @@
+.simpleBmsTable {
+  margin: 0 auto;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  border: 1px solid #aaaaaa;
+}
+
+.simpleBmsTable th {
+  padding: 8px;
+}
+
+.simpleBmsTable .header {
+  text-align: center;
+  font-weight: bold;
+  border: none;
+}
+
+.simpleBmsTable thead .header {
+  font-size: 1rem;
+  background-color: #f0f0f0;
+}
+
+.simpleBmsTable tbody .header {
+  position: sticky;
+  top: 0;
+  border: 1px solid #aaaaaa;
+  border-width: 1px 0;
+  font-size: 1rem;
+  background-color: #fafafa;
+}
+
+.simpleBmsTable tbody .header th {
+  padding: 12px;
+}
+
+.simpleBmsTable td {
+  color: #333333;
+  padding: 8px 6px;
+  word-wrap: break-word;
+}
+
+.simpleBmsTable td a {
+  color: #333333;
+}
+
+.simpleBmsTable thead .level {
+  width: 22px;
+}
+
+.simpleBmsTable thead .genre {
+  width: 20%;
+}
+
+.simpleBmsTable thead .title {
+  width: 30%;
+}
+
+.simpleBmsTable thead .artist {
+  width: 20%;
+}
+
+.simpleBmsTable thead .lr2irLink,
+.simpleBmsTable thead .mochaLink {
+  width: 60px;
+}
+
+.simpleBmsTable thead .info {
+  width: 310px;
+}
+
+.simpleBmsTable thead .accuracy {
+  width: 2em;
+}
+
+.simpleBmsTable .content .level {
+  font-family: Impact, Arial, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.simpleBmsTable .content[data-difficulty="1"] .level {
+  color: rgb(10, 153, 10);
+}
+
+.simpleBmsTable .content[data-difficulty="2"] .level {
+  color: rgb(0, 153, 255);
+}
+
+.simpleBmsTable .content[data-difficulty="3"] .level {
+  color: rgb(219, 152, 0);
+}
+
+.simpleBmsTable .content[data-difficulty="4"] .level {
+  color: red;
+}
+
+.simpleBmsTable .content[data-difficulty="5"] .level {
+  color: purple;
+}
+
+.simpleBmsTable .content .irLinks {
+  padding: 0;
+  height: 0;
+}
+
+.simpleBmsTable .content .irLinksInner {
+  display: flex;
+  align-items: stretch;
+  flex-flow: row;
+  height: 100%;
+}
+
+.simpleBmsTable .content .irLinksInner>a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+.simpleBmsTable .content .irLinksInner>a:hover {
+  background-color: #00000020;
+}
+
+.simpleBmsTable .content .irLinks .lr2ir {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.simpleBmsTable .content:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.simpleBmsTable .content:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.simpleBmsTable .content:hover {
+  background-color: #e0e0e0;
+}
+
+.simpleBmsTable .content .info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.7rem;
+}
+
+.simpleBmsTable .content .info>div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.simpleBmsTable .content .info-bpm_notes_time {
+  gap: 1em !important;
+}
+
+.simpleBmsTable .content .info-judge[data-judge="VERYEASY"] .info-judge-text {
+  filter: drop-shadow(0 0 3px limegreen);
+}
+
+.simpleBmsTable .content .info-judge[data-judge="EASY"] .info-judge-text {
+  filter: drop-shadow(0 0 3px limegreen);
+}
+
+.simpleBmsTable .content .info-judge[data-judge="NORMAL"] .info-judge-text {
+  filter: drop-shadow(0 0 3px rgb(155, 173, 255));
+}
+
+.simpleBmsTable .content .info-judge[data-judge="HARD"] .info-judge-text {
+  filter: drop-shadow(0 0 3px rgb(241, 210, 68));
+}
+
+.simpleBmsTable .content .info-judge[data-judge="VERYHARD"] .info-judge-text {
+  filter: drop-shadow(0 0 3px rgb(250, 94, 94));
+}
+
+.simpleBmsTable .content .info-features ul {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.simpleBmsTable .content .info-features li:not(:last-child)::after {
+  content: ",";
+}
+
+.simpleBmsTable .content .accuracy {
+  --marker-color: transparent;
+  
+  text-align: center;
+}
+
+.simpleBmsTable .content[data-accuracy="低"] .accuracy {
+  --marker-color: rgb(255, 233, 214);
+}
+
+.simpleBmsTable .content[data-accuracy="中"] .accuracy {
+  --marker-color: rgb(210, 223, 255);
+}
+
+.simpleBmsTable .content[data-accuracy="高"] .accuracy {
+  --marker-color: rgb(211, 255, 211);
+}
+
+.simpleBmsTable .content .accuracy span {
+  padding: 0 2px;
+  /* border-bottom: 3px solid var(--marker-color); */
+  background-color: var(--marker-color);
+}
+
+/* .simpleBmsTable .content[data-accuracy="低"] .accuracy {
+  --marker-color: rgb(211, 152, 145);
+}
+
+.simpleBmsTable .content[data-accuracy="中"] .accuracy {
+  --marker-color: rgb(133, 223, 250);
+}
+
+.simpleBmsTable .content[data-accuracy="高"] .accuracy {
+  --marker-color: rgb(133, 255, 133);
+}
+
+.simpleBmsTable .content .accuracy span {
+  padding: 0 2px;
+  border-bottom: 3px solid var(--marker-color);
+  filter: drop-shadow(0 0 3px var(--marker-color));
+} */
+
+.simpleBmsTable .content .comment {
+  font-size: 0.8rem;
+}

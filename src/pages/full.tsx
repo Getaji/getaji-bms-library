@@ -3,22 +3,22 @@ import Helmet from "react-helmet";
 import { graphql, PageProps } from "gatsby";
 
 import { FOLDER_NAMES } from "../common/common";
+import BMSTable from "../components/BMSTable";
 
-import type { SimpleSong } from "../common/types";
+import type { Song } from "../common/types";
 
-import "./index.css";
-import SimpleBMSTable from "../components/SimpleBMSTable";
+import "./full.css";
 
 type GraphQLResponse = {
   allFolderJson: {
     edges: {
-      node: SimpleSong;
+      node: Song;
     }[];
   };
 };
 
 export const query = graphql`
-query IndexPageTableDataQuery {
+query FullPageTableDataQuery {
   allFolderJson {
     edges {
       node {
@@ -30,6 +30,24 @@ query IndexPageTableDataQuery {
         subtitle
         artist
         subartist
+        content
+        level
+        difficulty
+        maxbpm
+        minbpm
+        mainbpm
+        length
+        judge
+        feature
+        notes
+        n
+        ln
+        s
+        ls
+        density
+        peakdensity
+        enddensity
+        total
         accuracy
         comment
       }
@@ -39,7 +57,6 @@ query IndexPageTableDataQuery {
 `
 
 const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
-  console.log(data);
   const edges = data.allFolderJson.edges;
 
   const table = edges.reduce(
@@ -49,7 +66,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
       }
       return acc;
     },
-    Object.fromEntries(FOLDER_NAMES.map((name) => [name, []])) as Record<string, SimpleSong[]>,
+    Object.fromEntries(FOLDER_NAMES.map((name) => [name, []])) as Record<string, Song[]>,
   );
 
   const tableEntries = Object.entries(table)
@@ -63,7 +80,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
         const titleB = b.title + " " + b.subtitle;
         return titleA.localeCompare(titleB, "ja");
       }),
-    ] as [string, SimpleSong[]]);
+    ] as [string, Song[]]);
 
   const totalSongCount = edges.length;
 
@@ -74,7 +91,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
         <meta name="bmstable" content="https://getaji-bms-library.pages.dev/table_header.json" />
         <script src="https://kit.fontawesome.com/12c2830556.js" crossOrigin="anonymous"></script>
       </Helmet>
-      <main className="app">
+      <main className="app full">
         <header>
           Getaji's BMS Library
         </header>
@@ -90,9 +107,6 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             <a href="/about">もっと詳しい説明はこちら</a>
           </p>
           <p>
-            <a href="/full">譜面密度などの詳細版ページはこちら（重いので注意）</a>
-          </p>
-          <p>
             <a href="/songs">収録楽曲一覧</a>
           </p>
           <p>
@@ -102,7 +116,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             収録曲数: 280曲 譜面数: {totalSongCount}譜面
           </p>
         </section>
-        <SimpleBMSTable table={tableEntries} />
+        <BMSTable table={tableEntries} />
       </main>
     </>
   );
