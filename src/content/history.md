@@ -16,6 +16,7 @@ id: history
 - reflection
 - SHINKA
 - The Breeze
+- uruou
 
 ## 難易度変更
 
