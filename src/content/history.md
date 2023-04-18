@@ -2,6 +2,34 @@
 id: history
 ---
 
+# 2023/04/18
+
+## 楽曲追加
+
+6曲
+
+> ☆未 Black Lotus [EZ]の難易度は次回の更新までに査定する予定です
+
+- alive
+- Black Lotus
+- Goodbye to Your Memory
+- reflection
+- SHINKA
+- The Breeze
+
+## 難易度変更
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+|☆12|☆11|colorbar [salader]|
+|☆11|☆12|It's "alice" dream[NORETHER]|
+
+## 譜面削除
+
+| 難易度 | 譜面 | 理由 |
+| --- | --- | --- |
+| ☆9,☆12,★13,★★2 | アズアラス | 加速地帯が某楽曲に酷似しており権利上の問題があるため |
+
 # 2023/01/09
 
 ## 楽曲追加
