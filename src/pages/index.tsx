@@ -98,7 +98,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             <a href="/history">更新履歴（2023/05/07 更新）</a>
           </p>
           <p>
-            収録曲数: 280曲 譜面数: {totalSongCount}譜面
+            収録曲数: 313曲 譜面数: {totalSongCount}譜面
           </p>
         </section>
         <SimpleBMSTable table={tableEntries} />
