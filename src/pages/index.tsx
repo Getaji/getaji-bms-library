@@ -96,7 +96,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             <a href="/songs">収録楽曲一覧</a>
           </p>
           <p>
-            <a href="/history">更新履歴（2023/04/18 更新）</a>
+            <a href="/history">更新履歴（2023/05/07 更新）</a>
           </p>
           <p>
             収録曲数: 280曲 譜面数: {totalSongCount}譜面

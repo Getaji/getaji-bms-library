@@ -2,13 +2,44 @@
 id: history
 ---
 
+# 2023/05/07
+
+## 楽曲追加
+
+12曲
+
+- 3000 Suns
+- Fanciful False
+- GARY III
+- Heartstrings
+- Lazy days
+- Mario Paint (Time Regression Mix for BMS)
+- Mystery
+- Orbital Drive
+- Rebirth of the MYTH
+- Third World
+- 終わりの少女
+- ４２２
+
+## 譜面追加
+
+| 難易度 | 譜面 |
+| --- | --- |
+|★1|Once in my life [MANATHER]|
+
+## 難易度変更
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+|☆未|☆11|Black Lotus [EZ]|
+
 # 2023/04/18
 
 ## 楽曲追加
 
 6曲
 
-> ☆未 Black Lotus [EZ]の難易度は次回の更新までに査定する予定です
+☆未 Black Lotus [EZ]の難易度は次回の更新までに査定する予定です
 
 - alive
 - Black Lotus
