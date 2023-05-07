@@ -39,7 +39,6 @@ query IndexPageTableDataQuery {
 `
 
 const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
-  console.log(data);
   const edges = data.allFolderJson.edges;
 
   const table = edges.reduce(
