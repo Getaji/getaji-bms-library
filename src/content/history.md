@@ -2,6 +2,139 @@
 id: history
 ---
 
+# 2023/05/19
+
+## お知らせ
+
+現在譜面のコメントを詳細に記述中です。……が、如何せん譜面数が多いため全部終わってから更新となるとかなり先になってしまいます。曲の追加もしたいので、一旦曲名順に"記号～数字～A"までの範囲を対応しました。以降は順次対応していきます。
+
+あと、大量に楽曲を追加したので<a href="/songs">収録楽曲一覧</a>の外観を変えました。ちょっとは見やすくなったかな。今後楽曲が発表されたイベントとかの情報も載せようと思いますが、量が多いので作業中です。
+
+説明のページもちょっと加筆修正しましたが、重要な内容が足されたり変わったりはしてないので読まなくて構いません。
+
+## 楽曲追加
+
+52曲
+
+- #DoomeyTunes
+- -+
+- 19ZZ
+- amorphous
+- Andromeda
+- Artificial Integrity (gmtn. remix)
+- Assumptio
+- Bohemian Chic
+- BRIGADE
+- center piercing
+- CHMR
+- cold planet
+- CRUSH THE PARTY
+- End Point
+- Endymion
+- Evanescent
+- Fastraffic
+- furioso melodia
+- Gothic System -C.H.S_NRG Mix-
+- HAELEQUIN
+- La notti bianche
+- lifework
+- Meteor Lights
+- Never Escape
+- Options
+- Phantom Whisper
+- polylattice
+- pseudonymph
+- Reinforced Soul
+- Simurgh
+- squartatrice
+- STAGER
+- Ten Desires.
+- The 84th Flight
+- unrequited love
+- VG (Radio Edit)
+- WAKEFULNESS
+- Wavetapper
+- Y
+- YATA
+- 絵空事の世界と私
+- ゴフェルの木棺
+- さようなら、いままで魚をありがとう
+- 事象の地平
+- 白黒高速大回転
+- 星蝕セクエンス
+- 多重極展開
+- 地下街
+- 東京攪乱インターセクション
+- 白狼
+- めめ
+- モリオンの姫
+
+## 譜面追加
+
+19譜面
+
+| 難易度 | 譜面 |
+| --- | --- |
+|★19|[line-epsilon] -delta-|
+|★6|Akasagarbha -morither-|
+|★19|Akasagarbha -morither+-|
+|★15|Akasagarbha -Temporal Sundering-|
+|★★3|Akasagarbha(Icyther) [Icyther]|
+|★9|Akasagarbha[AZ]|
+|★★2|Akasagarbha [EX]|
+|★★2|Akasagarbha [REX]|
+|★★3|Akasagarbha [S_EX]|
+|★★3|Altale[Finale]|
+|★4|Altostratus [AnotherQ]|
+|★★4|Amnehilesie [ [  ] ]|
+|★★5|Anzu no Kakkoi Ongaku [Lazy Fairy+]|
+|★★3|Aragami†LEGGENDARIA|
+|★17|AVALON -Resurrection-|
+|★18|AVALON [+]|
+|★12|AVALON [po]|
+|★11|AVALON [S.R.D]|
+|★12|AVALON [皿]|
+
+## 難易度変更
+
+33譜面
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+|★10|★9|[line:theta] [ln:th]|
+|☆7|☆6|[line:theta] [NORMAL]|
+|★3|★12|010 - 010 -|
+|★1|★5|7 colors* [Rainbow]|
+|★1|★2|7 colors* [RAINBOW]|
+|★10|★11|88D[大きい]|
+|★16|★17|A Gleam for the Sightless [SP CLUELESS]|
+|★★2|★★3|Agito [　]|
+|☆?|★5|Akasagarbha〔個人差100〕 [INSANE]|
+|!?|癖|Aleph-0[±0x]|
+|!?|難+|alicemourn [fox]|
+|★13|★12|Altale[INSANE]|
+|★13|低|Altostratus(ExHard)|
+|★3|★1|Altostratus[SP ACROTHER]|
+|★8|★9|Altros -VIRTUAL REALITY-|
+|★5|★★5|Always Feel the Same [TITANIC7]|
+|☆?|★★7|Angel's Salad [hwat hte fu-?]|
+|★5|★6|Angel's Salad [IDEALISM]|
+|!?|癖|Angel's Salad [Pressure]|
+|!?|難|Anger Control [Angry]|
+|★13|★14|Aragami[NATURE BEAM]|
+|☆11|☆10|ARCADE! 爆竹 PARTY (Remaster)|
+|★9|★12|Armageddon[ANOTHER]|
+|☆10|☆11|Armageddon[HYPER]|
+|★★6|★★7|Armageddon [Violation]|
+|★★5|★★4|Armageddon[Царь-бомба]|
+|☆6|☆7|Astrograph|
+|☆?|★1|Astrograph(B-Icyther)|
+|★★1|★★2|At the edge of dreams(KEN)|
+|★12|★13|AVALON [IIDX]|
+|◎|★5|AVALON [皿の穴]|
+|☆?|★13|Avantgarde [Another]|
+|☆11|☆12|It's "alice" dream[ラピスエディット]|
+
 # 2023/05/07
 
 ## 楽曲追加
