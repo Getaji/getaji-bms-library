@@ -43,24 +43,18 @@ const Page = ({ data }: PageProps<GraphQLResponse>) => {
         </nav>
         <header>収録楽曲一覧</header>
         <article className="document">
-          <table>
-            <thead>
-              <tr>
-                <th>曲名</th>
-                <th>アーティスト</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                songEdges.map((edge) => (
-                  <tr key={edge.node.title}>
-                    <td>{edge.node.title}</td>
-                    <td>{edge.node.artist}</td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
+          <p style={{textAlign: "center"}}>全{songEdges.length}曲</p>
+          <ul className="songList">
+          {
+            songEdges.map((edge) => (
+              <li key={edge.node.title} className="song">
+                <span className="song-title">{edge.node.title}</span>
+                <span className="song-delimiter">/</span>
+                <span className="song-artist">{edge.node.artist}</span>
+              </li>
+            ))
+          }
+          </ul>
         </article>
       </main>
     </>

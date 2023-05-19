@@ -19,7 +19,23 @@ main#songs {
   margin-top: 60px;
 }
 
-#songs article table th {
-  width: 50%;
-  word-break: keep-all;
+#songs article .song {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  margin-block: 2em;
+  align-items: baseline;
+}
+
+#songs article .song-title {
+  font-size: 1.3em;
+}
+
+#songs article .song-delimiter {
+  color: #888888;
+}
+
+#songs article .song-artist {
+  font-size: 1em;
+  color: #333333;
 }
