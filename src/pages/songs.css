@@ -16,14 +16,20 @@ main#songs {
 }
 
 #songs article {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 #songs article .song {
   display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin-block: 2em;
+}
+
+#songs article .song-titleAndArtist {
+  display: flex;
   flex-direction: row;
   gap: 0.5em;
-  margin-block: 2em;
   align-items: baseline;
 }
 
@@ -38,4 +44,11 @@ main#songs {
 #songs article .song-artist {
   font-size: 1em;
   color: #333333;
+}
+
+#songs article .song-note {
+  font-size: 0.9em;
+  color: #555555;
+  border-left: 2px solid #cccccc;
+  padding-left: 4px;
 }

@@ -10,6 +10,7 @@ type GraphQLResponse = {
       node: {
         title: string;
         artist: string;
+        note: string;
       };
     }[];
   };
@@ -22,6 +23,7 @@ export const query = graphql`
         node {
           title
           artist
+          note
         }
       }
     }
@@ -43,14 +45,17 @@ const Page = ({ data }: PageProps<GraphQLResponse>) => {
         </nav>
         <header>収録楽曲一覧</header>
         <article className="document">
-          <p style={{textAlign: "center"}}>全{songEdges.length}曲</p>
+          <p style={{textAlign: "center", marginBottom: 40}}>全{songEdges.length}曲</p>
           <ul className="songList">
           {
             songEdges.map((edge) => (
               <li key={edge.node.title} className="song">
-                <span className="song-title">{edge.node.title}</span>
-                <span className="song-delimiter">/</span>
-                <span className="song-artist">{edge.node.artist}</span>
+                <div className="song-titleAndArtist">
+                  <span className="song-title">{edge.node.title}</span>
+                  <span className="song-delimiter">/</span>
+                  <span className="song-artist">{edge.node.artist}</span>
+                </div>
+                <div className="song-note">{edge.node.note}</div>
               </li>
             ))
           }
