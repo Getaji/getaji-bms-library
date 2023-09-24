@@ -22,8 +22,8 @@ main#songs {
 #songs article .song {
   display: flex;
   flex-direction: column;
-  gap: 0.7em;
-  margin-block: 2em;
+  gap: 1em;
+  margin-block: 3em;
 }
 
 #songs article .song-titleAndArtist {
@@ -48,7 +48,7 @@ main#songs {
 
 #songs article .song-note {
   font-size: 0.9em;
-  color: #555555;
+  color: #6a6a6a;
   border-left: 2px solid #cccccc;
   padding-left: 4px;
 }
