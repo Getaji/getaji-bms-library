@@ -10,7 +10,7 @@ import "./index.css";
 import SimpleBMSTable from "../components/SimpleBMSTable";
 
 type GraphQLResponse = {
-  allFolderJson: {
+  allSqliteData: {
     edges: {
       node: SimpleSong;
     }[];
@@ -19,7 +19,7 @@ type GraphQLResponse = {
 
 export const query = graphql`
 query IndexPageTableDataQuery {
-  allFolderJson {
+  allSqliteData {
     edges {
       node {
         folder
@@ -39,7 +39,7 @@ query IndexPageTableDataQuery {
 `
 
 const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
-  const edges = data.allFolderJson.edges;
+  const edges = data.allSqliteData.edges;
 
   const table = edges.reduce(
     (acc, cur) => {

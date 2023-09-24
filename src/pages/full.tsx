@@ -10,7 +10,7 @@ import type { Song } from "../common/types";
 import "./full.css";
 
 type GraphQLResponse = {
-  allFolderJson: {
+  allSqliteData: {
     edges: {
       node: Song;
     }[];
@@ -19,7 +19,7 @@ type GraphQLResponse = {
 
 export const query = graphql`
 query FullPageTableDataQuery {
-  allFolderJson {
+  allSqliteData {
     edges {
       node {
         folder
@@ -57,7 +57,7 @@ query FullPageTableDataQuery {
 `
 
 const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
-  const edges = data.allFolderJson.edges;
+  const edges = data.allSqliteData.edges;
 
   const table = edges.reduce(
     (acc, cur) => {

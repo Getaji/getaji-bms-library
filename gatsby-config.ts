@@ -14,6 +14,19 @@ const config: GatsbyConfig = {
     "gatsby-transformer-json",
     `gatsby-transformer-remark`,
     {
+      resolve: `gatsby-source-sqlite`,
+      options: {
+        fileName: './src/content/data.db',
+        queries: [
+          {
+            statement: 'SELECT * FROM data',
+            idFieldName: 'sha256',
+            name: 'data'
+          }
+        ]
+      }
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: "./src/content/",

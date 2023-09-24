@@ -8,7 +8,7 @@ import { FOLDER_NAMES } from "../../src/common/common";
 const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意"];
 
 type GraphQLResponse = {
-  allFolderJson: {
+  allSqliteData: {
     edges: {
       node: Song;
     }[];
@@ -27,7 +27,7 @@ async function generateAndSaveTableData(graphql: CreatePagesArgs["graphql"], bas
     errors
   } = await graphql<GraphQLResponse>(`
     query TableDataQuery {
-      allFolderJson {
+      allSqliteData {
         edges {
           node {
             folder
@@ -62,7 +62,7 @@ async function generateAndSaveTableData(graphql: CreatePagesArgs["graphql"], bas
   if (!data) return;
 
   const {
-    allFolderJson: {
+    allSqliteData: {
       edges,
     },
   } = data;
