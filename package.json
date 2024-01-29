@@ -5,10 +5,10 @@
   "description": "getaji's bms library",
   "author": "Getaji",
   "scripts": {
-    "dev": "gatsby develop -p 8081",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "dev": "pnpx gatsby develop -p 8081",
+    "build": "pnpx gatsby build",
+    "serve": "pnpx gatsby serve",
+    "clean": "pnpx gatsby clean",
     "lint": "eslint --ext .tsx,.ts src/ && stylelint ./src/**/*.css",
     "format": "prettier --write \"src/**/*.+(js|json|yml|ts|tsx)\" && stylelint ./src/**/*.css --fix",
     "typecheck": "tsc --noEmit"
