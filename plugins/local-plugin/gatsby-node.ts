@@ -5,7 +5,7 @@ import { join as joinPath } from "path";
 import type { Song } from "../../src/common/types";
 import { FOLDER_NAMES } from "../../src/common/common";
 
-const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意"];
+const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意", "All Song"];
 
 type GraphQLResponse = {
   allSqliteData: {

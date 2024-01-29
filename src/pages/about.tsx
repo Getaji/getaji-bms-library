@@ -27,6 +27,13 @@ const Page = () => {
     <>
       <Helmet>
         <title>この難易度表について | Getaji's BMS Library</title>
+        <head prefix="og: https://ogp.me/ns#" />
+        <meta property="og:url" content="/about/" />
+        <meta property="og:type" content=" ページの種類" />
+        <meta property="og:title" content=" ページのタイトル" />
+        <meta property="og:description" content=" ページの説明文" />
+        <meta property="og:site_name" content="サイト名" />
+        <meta property="og:image" content=" サムネイル画像のURL" />
       </Helmet>
       <main id="about">
         <nav>

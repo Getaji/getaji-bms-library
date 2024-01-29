@@ -2,6 +2,51 @@
 id: history
 ---
 
+# 2024/01/30
+
+もうちょっと高頻度で更新したいところですね……。BOF:NTの作品は次回まとめて追加します。
+
+## 楽曲追加
+
+21曲
+
+- Dance with me
+- ELIMINATOR
+- Emptiness
+- Engine
+- Eventide
+- Finixe
+- Grayed Out -Antifront-
+- Hypersurface
+- Journey to Find Hope
+- LASTMORN
+- Late Summer
+- Lieselotte et le Sanctuaire des Étoiles
+- Neurotoxin
+  - 同梱譜面はBGAあり版のみ掲載
+- Paracelestia
+- WHIRLWIND
+- Wondertainer
+- Απομνημονευμαι
+- ★LittlE HearTs★
+- 藍より青い憧憬
+- 呼無のカミサマ
+- 天
+
+## 難易度変更
+
+7譜面
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+|☆8|☆10|妄想製造傘下[SP HYPER]|
+|☆12|★1|Sesame Kingdom [Sesame sung]|
+|★1|☆?|cold planet (Oceanfront City Remix) (^^)|
+|☆11|☆12|Bipolar [ANOTHER]|
+|☆12|★1|squartatrice -sayaker-|
+|★6|★12|YATA(超級)|
+|★9|★20|YATA(地獄級)|
+
 # 2023/09/24
 
 ## お知らせ
