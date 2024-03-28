@@ -90,6 +90,11 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
         <title>Getaji's BMS Library</title>
         <meta name="bmstable" content="https://getaji-bms-library.pages.dev/table_header.json" />
         <script src="https://kit.fontawesome.com/12c2830556.js" crossOrigin="anonymous"></script>
+        <head prefix="og: https://ogp.me/ns#" />
+        <meta property="og:url" content="/full/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Getaji's BMS Library" />
+        <meta property="og:description" content="好きな曲の差分を収集し、難易度を推定して分類した7鍵用の難易度表です。" />
       </Helmet>
       <main className="app full">
         <header>

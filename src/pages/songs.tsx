@@ -38,6 +38,11 @@ const Page = ({ data }: PageProps<GraphQLResponse>) => {
     <>
       <Helmet>
         <title>収録楽曲一覧 | Getaji's BMS Library</title>
+        <head prefix="og: https://ogp.me/ns#" />
+        <meta property="og:url" content="/songs/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="収録楽曲一覧 | Getaji's BMS Library" />
+        <meta property="og:description" content="この難易度表に収録されている楽曲、公開イベントなどの出展情報、その他情報を掲載しています。" />
       </Helmet>
       <main id="songs">
         <nav>
