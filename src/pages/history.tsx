@@ -32,6 +32,8 @@ const Page = () => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="更新履歴 | Getaji's BMS Library" />
         <meta property="og:description" content="楽曲・譜面の追加、難易度の変更、譜面の削除などの履歴を掲載しています。" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@Getaji" />
       </Helmet>
       <main id="history">
         <nav>

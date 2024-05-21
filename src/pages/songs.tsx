@@ -43,6 +43,8 @@ const Page = ({ data }: PageProps<GraphQLResponse>) => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="収録楽曲一覧 | Getaji's BMS Library" />
         <meta property="og:description" content="この難易度表に収録されている楽曲、公開イベントなどの出展情報、その他情報を掲載しています。" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@Getaji" />
       </Helmet>
       <main id="songs">
         <nav>
