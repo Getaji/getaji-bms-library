@@ -1,13 +1,15 @@
 import React from "react";
 import Helmet from "react-helmet";
+import loadable from "@loadable/component";
 import { graphql, PageProps } from "gatsby";
 
 import { FOLDER_NAMES } from "../common/common";
-import BMSTable from "../components/BMSTable";
 
 import type { Song } from "../common/types";
 
 import "./full.css";
+
+const BMSTable = loadable(() => import("../components/BMSTable"));
 
 type GraphQLResponse = {
   allSqliteData: {

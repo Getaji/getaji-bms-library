@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import loadable from "@loadable/component";
 import { graphql, PageProps } from "gatsby";
 
 import { FOLDER_NAMES } from "../common/common";
@@ -7,7 +8,8 @@ import { FOLDER_NAMES } from "../common/common";
 import type { SimpleSong } from "../common/types";
 
 import "./index.css";
-import SimpleBMSTable from "../components/SimpleBMSTable";
+
+const SimpleBMSTable = loadable(() => import("../components/SimpleBMSTable"));
 
 type GraphQLResponse = {
   allSqliteData: {
