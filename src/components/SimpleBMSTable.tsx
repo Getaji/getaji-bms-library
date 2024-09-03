@@ -34,7 +34,7 @@ export function BMSTable({ table }: Props) {
             {songs.map((song) => (
               <tr
                 className="content"
-                key={song.md5}
+                key={song.md5 || song.sha256}
                 data-accuracy={song.accuracy}
               >
                 <td className="genre">{song.genre}</td>
