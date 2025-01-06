@@ -2,6 +2,108 @@
 id: history
 ---
 
+# 2025/01/06
+
+年が明けてしまったのだが？？
+
+BOF:TTは次回の予定。
+
+## 楽曲追加
+
+今回からアーティスト名を併記します（長くなるのでコンポーザー名以外は省略します、ご了承ください。楽曲一覧ページには載せてあります）。
+
+27曲
+
+- Alastor / 鳩
+- Anhedonia / Silent Spica
+- Astar / 黒皇帝
+- Baby / r
+- BOBO BOBO ～ボボ ボボ～ / Joseph De'yeah
+- chamomile / daisan
+- Cosmo Memory / Nardis
+- Dreams / deepState
+- Faurie / 黒皇帝
+- GEMINI / TiS
+- Hold You Back / needme
+- klimt / 愛新覚羅溥儀
+- Lacrimosa / Abel & RiraN
+- LOW / エクスペリメンタル三郎
+- Luminescence / 黒皇帝 & qune
+- Lumos (BMS Edit) / L.K.
+- Luxvinore / Nordius Dystancius
+- Neurotoxicity / 黒皇帝
+- Orillia / Cutos
+- Strahv / Feryquitous
+- Titanomaquia / ルゼ
+- world devoid of you (fairydust radio edit) / void
+- ∀ / ああああ
+- 薄雲 / 薄荷堂 龍
+- 祈雨の菖蒲 / Nego_tiator × 神宮要 × Avtorica
+- 夢/あるいは在りし日の / Nego_tiator
+- 藍天 / 薄荷堂 龍
+
+## 譜面追加
+
+43譜面
+
+| 難易度 | 譜面 |
+| --- | --- |
+|☆11|Altros [AX3]|
+|★12|Always Feel the Same [SOPHISTICATED]|
+|★18|Avantgarde [avant-garde]|
+|★27|Avantgarde [Oripathy]|
+|★14|Avantgarde [TOKI]|
+|★3|Babel [HARD]|
+|★21|Babel [NAGITHER]|
+|★18|Babel [空想の領域]|
+|★7|Babel [空中庭園]|
+|★20|Black Wings [Maryther]|
+|★12|Black Wings [Rise]|
+|★21|CHMR|
+|☆?|CHMR -recontextualize-|
+|★4|Cube of mind [Spirit]|
+|★25|Cutee☆NeverLand [Dedicated]|
+|★20|Cutee☆NeverLand [おやつネットワーク]|
+|★20|Fickle Mind [End]|
+|★22|Fickle Mind [End+]|
+|★1|Fickle Mind [HCN ANOTHER]|
+|◆|Fine Logic [Polaris]|
+|★15|Fine Logic [Reality]|
+|☆?|Fine Logic [SHD or Insane?]|
+|★2|Fine Logic [Vocal Another]|
+|★13|Fine Logic [Vocal Reality]|
+|★21|hiAtus: reAlity [a'nrakor]|
+|★11|Pangaea[HiHiHiTHER]|
+|★19|Reinforced Soul [Beelzebub]|
+|★1|slic.hertz -bk.another-|
+|◆|slic.hertz [9 Lives]|
+|◎|slic.hertz [SP Another+]|
+|★22|squartatrice [SP DELAYAKA]|
+|★25|WAKEFULNESS -SMALL WALL-|
+|★12|WILDANCE #Decimalized|
+|★21|WILDANCE <o/|
+|★21|アドバンス・シグナル [RESISTANCE]|
+|★24|アドバンス・シグナル [この番組は、ご覧のスポンサーの提供でお送りします。]|
+|★21|ゴフェルの木棺 (extremeplus mix)|
+|★25|ゴフェルの木棺 [Hi]|
+|癖|点、線、面、立体 [HYPERDIMENSION]|
+|☆未|点、線、面、立体 [Quadrangle]|
+|★24|夢、幻。 [Earth]|
+|★22|プラネット [Pluto]|
+|★26|プラネット [Xena]|
+
+## 難易度変更
+
+5譜面
+
+| 旧 | 新 | 譜面 |
+| --- | --- | --- |
+|☆12|★2|Blood Castle [HD2]|
+|☆12|★1|Blood Castle [EX - 7Another]|
+|★2|★3|Foresta|
+|☆10|☆11|Y|
+|★13|★3|夢、幻。 -Hope-|
+
 # 2024/05/22
 
 BOF:NTのお気に入り作品を一括追加しました。いっぱいあります。大体の作品を2，3周くらい巡回して選んだので、同イベントからの追加はこれ以上ないと思います。
