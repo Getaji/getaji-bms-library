@@ -34,3 +34,23 @@
 .app.full a {
   color: #222222;
 }
+
+#indexNav {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+}
+
+#indexNav .navItem {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 16px;
+  text-decoration: none;
+  background-color: #fafafa;
+}
+
+#indexNav .navItem:hover {
+  text-decoration: underline;
+  background-color: #dddddd;
+}

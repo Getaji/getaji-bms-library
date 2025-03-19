@@ -12,6 +12,18 @@ import "./full.css";
 const BMSTable = loadable(() => import("../components/BMSTable"));
 
 type GraphQLResponse = {
+  latestHistory: {
+    edges: {
+      node: {
+        frontmatter: {
+          date: string;
+        }
+      }
+    }[]
+  }
+  songsCount: {
+    totalCount: number;
+  };
   allSqliteData: {
     edges: {
       node: Song;
@@ -21,6 +33,22 @@ type GraphQLResponse = {
 
 export const query = graphql`
 query FullPageTableDataQuery {
+  latestHistory: allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/src/content/histories/"}}
+    limit: 1,
+    sort: {frontmatter: {date: DESC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          date
+        }
+      }
+    }
+  }
+  songsCount: allSongsJson {
+    totalCount
+  }
   allSqliteData {
     edges {
       node {
@@ -59,6 +87,8 @@ query FullPageTableDataQuery {
 `
 
 const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
+  const updatedAt = data.latestHistory.edges[0].node.frontmatter.date;
+  const songsCount = data.songsCount.totalCount;
   const edges = data.allSqliteData.edges;
 
   const table = edges.reduce(
@@ -119,10 +149,10 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             <a href="/songs">収録楽曲一覧</a>
           </p>
           <p>
-            <a href="/history">更新履歴（2025/01/06 更新）</a>
+            <a href="/history">更新履歴（{updatedAt} 更新）</a>
           </p>
           <p>
-            収録曲数: 594曲 譜面数: {totalSongCount}譜面
+            収録曲数: ${songsCount}曲 譜面数: {totalSongCount}譜面
           </p>
         </section>
         <BMSTable table={tableEntries} />

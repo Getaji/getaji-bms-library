@@ -1,4 +1,4 @@
-.app {
+#index {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -10,27 +10,47 @@
   font-size: 1rem;
 }
 
-.app header {
+#index header {
   padding: 10px 0;
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
 }
 
-.app section {
+#index section {
   text-align: center;
 }
 
-.app section p {
+#index section p {
   line-height: 1.5em;
 }
 
-.app small {
+#index small {
   font-size: 0.85rem;
   text-align: center;
   line-height: 1.5em;
 }
 
-.app a {
+#index a {
   color: #222222;
+}
+
+#indexNav {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+}
+
+#indexNav .navItem {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 16px;
+  text-decoration: none;
+  background-color: #fafafa;
+}
+
+#indexNav .navItem:hover {
+  text-decoration: underline;
+  background-color: #dddddd;
 }

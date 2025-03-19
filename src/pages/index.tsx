@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import loadable from "@loadable/component";
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 
 import { FOLDER_NAMES } from "../common/common";
 
@@ -12,7 +12,19 @@ import "./index.css";
 const SimpleBMSTable = loadable(() => import("../components/SimpleBMSTable"));
 
 type GraphQLResponse = {
-  allSqliteData: {
+  latestHistory: {
+    edges: {
+      node: {
+        frontmatter: {
+          date: string;
+        }
+      }
+    }[]
+  }
+  songsCount: {
+    totalCount: number;
+  };
+  charts: {
     edges: {
       node: SimpleSong;
     }[];
@@ -21,7 +33,23 @@ type GraphQLResponse = {
 
 export const query = graphql`
 query IndexPageTableDataQuery {
-  allSqliteData {
+  latestHistory: allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/src/content/histories/"}}
+    limit: 1,
+    sort: {frontmatter: {date: DESC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          date
+        }
+      }
+    }
+  }
+  songsCount: allSongsJson {
+    totalCount
+  }
+  charts: allSqliteData {
     edges {
       node {
         folder
@@ -41,9 +69,11 @@ query IndexPageTableDataQuery {
 `
 
 const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
-  const edges = data.allSqliteData.edges;
+  const updatedAt = data.latestHistory.edges[0].node.frontmatter.date;
+  const songsCount = data.songsCount.totalCount;
+  const charts = data.charts.edges;
 
-  const table = edges.reduce(
+  const table = charts.reduce(
     (acc, cur) => {
       if (cur.node.folder in acc) {
         acc[cur.node.folder].push(cur.node);
@@ -66,7 +96,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
       }),
     ] as [string, SimpleSong[]]);
 
-  const totalSongCount = edges.length;
+  const chartsCount = charts.length;
 
   return (
     <>
@@ -82,7 +112,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@Getaji" />
       </Helmet>
-      <main className="app">
+      <main id="index" className="app">
         <header>
           Getaji's BMS Library
         </header>
@@ -95,19 +125,15 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             このページのURLをそのまま管理アプリやBMSプレイヤーに追加して利用できます。
           </p>
           <p>
-            <a href="/about">もっと詳しい説明はこちら</a>
+            {updatedAt} 更新
           </p>
+          <nav id="indexNav">
+            <Link className="navItem" to="/about">詳細説明</Link>
+            <Link className="navItem" to="/songs">楽曲一覧</Link>
+            <Link className="navItem" to="/histories">更新履歴</Link>
+          </nav>
           <p>
-            <a href="/full">譜面密度などの詳細版ページはこちら（重いので注意）</a>
-          </p>
-          <p>
-            <a href="/songs">収録楽曲一覧</a>
-          </p>
-          <p>
-            <a href="/history">更新履歴（2025/01/06 更新）</a>
-          </p>
-          <p>
-            収録曲数: 594曲 譜面数: {totalSongCount}譜面
+            収録曲数: {songsCount}曲 譜面数: {chartsCount}譜面
           </p>
         </section>
         <SimpleBMSTable table={tableEntries} />

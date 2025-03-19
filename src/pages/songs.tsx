@@ -1,7 +1,7 @@
 import { graphql, PageProps, useStaticQuery } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
-import "./common-document.css";
+import "../common/common-document.css";
 import "./songs.css";
 
 type GraphQLResponse = {
