@@ -1,28 +1,20 @@
-main#history {
+#histories {
   max-width: 600px;
   margin: 0 auto 60px;
   font-family: "BIZ UDPゴシック", "Yu Gothic", Meiryo, "Helvetica Neue", Helvetica, "Noto Sans JP", sans-serif;
   font-size: 0.9rem;
 }
 
-#history header {
-  margin: 20px;
+#histories header {
+  margin: 20px 0 40px;
   text-align: center;
   font-size: 1.6rem;
 }
 
-#history nav {
+#histories nav {
   text-align: center;
 }
 
-#history article {
+#histories article {
   margin-top: 60px;
-}
-
-#history article table th:last-child {
-  width: 100%;
-}
-
-#history article table th:not(:last-child) {
-  word-break: keep-all;
 }
