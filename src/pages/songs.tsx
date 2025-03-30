@@ -32,7 +32,7 @@ export const query = graphql`
 
 const Page = ({ data }: PageProps<GraphQLResponse>) => {
 
-  const songEdges = data.allSongsJson.edges.sort((a, b) => a.node.title.localeCompare(b.node.title, "ja"));
+  const songEdges = data.allSongsJson.edges;
 
   return (
     <>
