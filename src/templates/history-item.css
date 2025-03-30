@@ -22,3 +22,7 @@
 #historyArticle table th:not(:last-child) {
   word-break: keep-all;
 }
+
+#historyArticle .table_newSong table th {
+  width: 50%;
+}
