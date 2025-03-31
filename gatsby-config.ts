@@ -11,6 +11,7 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-pnpm",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-remove-generator",
     "gatsby-plugin-loadable-components-ssr",
     "gatsby-transformer-json",
     `gatsby-transformer-remark`,

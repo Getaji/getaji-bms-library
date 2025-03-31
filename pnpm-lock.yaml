@@ -26,6 +26,9 @@ importers:
       gatsby-plugin-loadable-components-ssr:
         specifier: ^4.3.2
         version: 4.3.2(@babel/core@7.25.2)(@loadable/component@5.16.4(react@18.3.1))(gatsby@5.13.7(babel-eslint@10.1.0(eslint@9.9.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(webpack@5.94.0)
+      gatsby-plugin-remove-generator:
+        specifier: ^1.3.0
+        version: 1.3.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@9.9.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4))
       gatsby-source-filesystem:
         specifier: ^5.13.1
         version: 5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@9.9.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4))
@@ -3648,6 +3651,12 @@ packages:
     peerDependencies:
       gatsby: ^5.0.0-next
       react-helmet: ^5.1.3 || ^6.0.0
+
+  gatsby-plugin-remove-generator@1.3.0:
+    resolution: {integrity: sha512-M6j5TpV2gS5Y2/PxU8jwfMnfEKbmAB1Vz6GsPyV2e2fm3nnj236cuQzJzI/21MkTMpINFy5tK90hcDSShZFeHQ==}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      gatsby: 2.x.x || 3.x.x || 4.x.x || 5.x.x
 
   gatsby-plugin-typescript@5.13.1:
     resolution: {integrity: sha512-FsTihoFKWTjzyIaUTndqktL39qMTAb0KyHj9kP+LxTY2FySqHIvFoYc1ycS5q52J76AoWUiGStJuuQLMNq66FQ==}
@@ -11457,6 +11466,10 @@ snapshots:
       '@babel/runtime': 7.25.6
       gatsby: 5.13.7(babel-eslint@10.1.0(eslint@9.9.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4)
       react-helmet: 6.1.0(react@18.3.1)
+
+  gatsby-plugin-remove-generator@1.3.0(gatsby@5.13.7(babel-eslint@10.1.0(eslint@9.9.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4)):
+    dependencies:
+      gatsby: 5.13.7(babel-eslint@10.1.0(eslint@9.9.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4)
 
   gatsby-plugin-typescript@5.13.1(gatsby@5.13.7(babel-eslint@10.1.0(eslint@9.9.1))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4)):
     dependencies:
