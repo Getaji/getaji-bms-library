@@ -33,6 +33,15 @@ main#songs {
   align-items: baseline;
 }
 
+#songs article .song-titleAndArtist-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+#songs article .song-titleAndArtist-link:hover {
+  text-decoration: underline;
+}
+
 #songs article .song-title {
   font-size: 1.3em;
 }

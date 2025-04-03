@@ -58,6 +58,8 @@ async function generateAndSaveTableData(
             judge
             feature
             notes
+            url
+            appendurl
           }
         }
       }
@@ -88,6 +90,9 @@ async function generateAndSaveTableData(
       level: song.folder,
       title: song.subtitle ? `${song.title} ${song.subtitle}` : song.title,
       artist: song.subartist ? `${song.artist} ${song.subartist}` : song.artist,
+      comment: song.comment,
+      url: song.url,
+      appendurl: song.appendurl,
     }));
   const tableSongsStr = JSON.stringify(tableSongs);
 

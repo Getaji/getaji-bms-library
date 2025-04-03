@@ -19,6 +19,8 @@ export function BMSTable({ table }: Props) {
           <th className="title">タイトル</th>
           <th className="artist">アーティスト</th>
           <th className="lr2irLink">IR</th>
+          <th className="urlLink">本体</th>
+          <th className="appendurlLink">差分</th>
           <th className="accuracy">確度</th>
           <th className="comment">コメント</th>
         </tr>
@@ -27,7 +29,7 @@ export function BMSTable({ table }: Props) {
         {table.map(([folder, songs]) => (
           <Fragment key={folder}>
             <tr className="header">
-              <th colSpan={6}>
+              <th colSpan={8}>
                 GL{folder.replace("~", "～")} ({songs.length} Songs)
               </th>
             </tr>
@@ -64,6 +66,30 @@ export function BMSTable({ table }: Props) {
                       <i className="fa-solid fa-mug-saucer"></i>
                     </a>
                   </div>
+                </td>
+                <td className="urlLink">
+                  <a
+                    className="urlLinks-url"
+                    href={song.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    本体
+                  </a>
+                </td>
+                <td className="appendurlLink">
+                  {
+                    song.appendurl && (
+                      <a
+                        className="urlLinks-appendurl"
+                        href={song.appendurl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        差分
+                      </a>
+                    )
+                  }
                 </td>
                 <td className="accuracy">
                   <span>{song.accuracy}</span>

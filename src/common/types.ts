@@ -9,6 +9,8 @@ export type SimpleSong = {
   folder: string;
   accuracy: string;
   comment: string;
+  url: string;
+  appendurl: string;
 };
 
 export type Song = {
@@ -40,6 +42,8 @@ export type Song = {
   total: number;
   accuracy: string;
   comment: string;
+  url: string;
+  appendurl: string;
 };
 
 export type Table<S extends Partial<Song> = Song> = {

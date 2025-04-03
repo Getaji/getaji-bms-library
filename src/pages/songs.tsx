@@ -11,6 +11,7 @@ type GraphQLResponse = {
         title: string;
         artist: string;
         note: string;
+        url: string;
       };
     }[];
   };
@@ -24,6 +25,7 @@ export const query = graphql`
           title
           artist
           note
+          url
         }
       }
     }
@@ -55,14 +57,31 @@ const Page = ({ data }: PageProps<GraphQLResponse>) => {
           <p style={{textAlign: "center", marginBottom: 40}}>全{songEdges.length}曲</p>
           <ul className="songList">
           {
-            songEdges.map((edge) => (
-              <li key={edge.node.title} className="song">
+            songEdges.map(({node: song}) => (
+              <li key={song.title} className="song">
                 <div className="song-titleAndArtist">
-                  <span className="song-title">{edge.node.title}</span>
-                  <span className="song-delimiter">/</span>
-                  <span className="song-artist">{edge.node.artist}</span>
+                  {
+                    song.url ? (
+                      <a
+                        className="song-titleAndArtist-link"
+                        href={song.url} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <span className="song-title">{song.title}</span>
+                        <span className="song-delimiter">/</span>
+                        <span className="song-artist">{song.artist}</span>
+                      </a>
+                    ) : (
+                      <>
+                        <span className="song-title">{song.title}</span>
+                        <span className="song-delimiter">/</span>
+                        <span className="song-artist">{song.artist}</span>
+                      </>
+                    )
+                  }
                 </div>
-                <div className="song-note">{edge.node.note}</div>
+                <div className="song-note">{song.note}</div>
               </li>
             ))
           }

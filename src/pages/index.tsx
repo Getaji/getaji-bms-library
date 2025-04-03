@@ -62,6 +62,8 @@ query IndexPageTableDataQuery {
         subartist
         accuracy
         comment
+        url
+        appendurl
       }
     }
   }

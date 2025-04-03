@@ -66,6 +66,11 @@
   width: 60px;
 }
 
+.simpleBmsTable thead .urlLink,
+.simpleBmsTable thead .appendurlLink {
+  width: 2em;
+}
+
 .simpleBmsTable thead .info {
   width: 310px;
 }
@@ -128,6 +133,22 @@
   font-size: 0.7rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+.simpleBmsTable .content .urlLink,
+.simpleBmsTable .content .appendurlLink {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.simpleBmsTable .content .urlLink a,
+.simpleBmsTable .content .appendurlLink a {
+  text-decoration: none;
+}
+
+.simpleBmsTable .content .urlLink a:hover,
+.simpleBmsTable .content .appendurlLink a:hover {
+  text-decoration: underline;
 }
 
 .simpleBmsTable .content:nth-child(odd) {
