@@ -57,7 +57,7 @@ async function generateAndSaveTableData(
             length
             judge
             feature
-            notes
+            comment
             url
             appendurl
           }
