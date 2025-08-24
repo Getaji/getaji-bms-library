@@ -79,10 +79,10 @@ export function BMSTable({ table }: Props) {
                 </td>
                 <td className="appendurlLink">
                   {
-                    song.appendurl && (
+                    song.url_diff && (
                       <a
                         className="urlLinks-appendurl"
-                        href={song.appendurl}
+                        href={song.url_diff}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

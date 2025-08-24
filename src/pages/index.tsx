@@ -63,7 +63,7 @@ query IndexPageTableDataQuery {
         accuracy
         comment
         url
-        appendurl
+        url_diff
       }
     }
   }

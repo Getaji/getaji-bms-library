@@ -10,7 +10,7 @@ export type SimpleSong = {
   accuracy: string;
   comment: string;
   url: string;
-  appendurl: string;
+  url_diff: string;
 };
 
 export type Song = {
@@ -43,7 +43,7 @@ export type Song = {
   accuracy: string;
   comment: string;
   url: string;
-  appendurl: string;
+  url_diff: string;
 };
 
 export type Table<S extends Partial<Song> = Song> = {

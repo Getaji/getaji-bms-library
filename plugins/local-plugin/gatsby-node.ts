@@ -59,7 +59,7 @@ async function generateAndSaveTableData(
             feature
             comment
             url
-            appendurl
+            url_diff
           }
         }
       }
@@ -92,7 +92,7 @@ async function generateAndSaveTableData(
       artist: song.subartist ? `${song.artist} ${song.subartist}` : song.artist,
       comment: song.comment,
       url: song.url,
-      appendurl: song.appendurl,
+      url_diff: song.url_diff,
     }));
   const tableSongsStr = JSON.stringify(tableSongs);
 
