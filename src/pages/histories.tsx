@@ -59,10 +59,6 @@ const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
 
         <header>更新履歴</header>
 
-        <section>
-          現在、更新履歴を改修中です。一時的に古い履歴が閲覧できなくなっていますが、そのうち対応します。
-        </section>
-
         <article id="historyArticle" dangerouslySetInnerHTML={{ __html: latest.html }} />
 
         <section className="histories">
