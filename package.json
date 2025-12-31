@@ -9,8 +9,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint --ext .tsx,.ts src/ && stylelint ./src/**/*.css",
-    "format": "prettier --write \"src/**/*.+(js|json|yml|ts|tsx)\" && stylelint ./src/**/*.css --fix",
+    "lint": "eslint --ext .tsx,.ts src/",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -35,16 +34,11 @@
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
     "eslint": "^9.9.1",
-    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.35.1",
     "gatsby-plugin-pnpm": "^1.2.10",
     "gatsby-plugin-react-helmet": "^6.13.1",
-    "prettier": "^3.3.3",
     "prop-types": "^15.8.1",
     "react-helmet": "^6.1.0",
-    "stylelint": "^16.9.0",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-standard": "^36.0.1",
     "typescript": "^5.5.4"
   },
   "pnpm": {
