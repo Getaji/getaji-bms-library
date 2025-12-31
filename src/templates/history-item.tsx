@@ -9,11 +9,12 @@ interface HistoriesPageData {
   article: {
     edges: {
       node: {
+        id: string;
+        html: string;
         frontmatter: {
           date: string;
           title: string;
         };
-        html: string;
       };
     }[];
   };
@@ -60,9 +61,17 @@ const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
           <ul>
             {histories.map(({ node }) => (
               <li key={node.id}>
-                <Link to={node.fields.slug}>
-                  {node.frontmatter.title}
-                </Link>
+                {
+                  node.id === article.id ? (
+                    <span>
+                      {node.frontmatter.title} ←
+                    </span>
+                  ) : (
+                    <Link to={node.fields.slug}>
+                      {node.frontmatter.title}
+                    </Link>
+                  )
+                }
               </li>
             ))}
           </ul>
@@ -77,11 +86,12 @@ export const query = graphql`
     article: allMarkdownRemark(filter: { id: { eq: $id } }) {
       edges {
         node {
+          html
+          id
           frontmatter {
             date
             title
           }
-          html
         }
       }
     }

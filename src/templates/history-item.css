@@ -26,3 +26,7 @@
 #historyArticle .table_newSong table th {
   width: 50%;
 }
+
+#historyArticle .table_replaceChart table th:nth-of-type(n+2) {
+  width: 50%;
+}

@@ -1,7 +1,6 @@
 .simpleBmsTable {
   margin: 0 auto;
   table-layout: fixed;
-  width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
   border: 1px solid #aaaaaa;

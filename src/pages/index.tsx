@@ -7,6 +7,7 @@ import { FOLDER_NAMES } from "../common/common";
 
 import type { SimpleSong } from "../common/types";
 
+import "./global.css";
 import "./index.css";
 
 const SimpleBMSTable = loadable(() => import("../components/SimpleBMSTable"));
@@ -120,7 +121,7 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
         </header>
         <section>
           <p>
-            BMSで好きな曲の譜面を収集して難易度を推定し分類した7鍵用の難易度表です。
+            好きなBMS楽曲の譜面を収集して難易度を推定・分類した7鍵用の難易度表です。
           </p>
           <p>
             次期難易度表フォーマットに対応しています。<br />
@@ -138,7 +139,9 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
             収録曲数: {songsCount}曲 譜面数: {chartsCount}譜面
           </p>
         </section>
-        <SimpleBMSTable table={tableEntries} />
+        <div id="tableContainer">
+          <SimpleBMSTable table={tableEntries} />
+        </div>
       </main>
     </>
   );

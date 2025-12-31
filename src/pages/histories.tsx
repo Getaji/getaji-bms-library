@@ -1,6 +1,7 @@
 // src/pages/histories.tsx
 import React from "react";
 import { Link, graphql, PageProps } from "gatsby";
+import "./global.css";
 import "../common/common-document.css";
 import "./histories.css";
 import "../templates/history-item.css";
