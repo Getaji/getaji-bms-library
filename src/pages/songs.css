@@ -27,20 +27,18 @@ main#songs {
   margin-block: 3em;
 }
 
-#songs article .song-titleAndArtist {
+#songs article .song-titleAndArtist-link,
+#songs article .song-titleAndArtist-nolink {
   display: flex;
   flex-direction: row;
   gap: 0.5em;
   align-items: baseline;
-}
-
-#songs article .song-titleAndArtist-link {
   color: inherit;
   text-decoration: none;
 }
 
 #songs article .song-titleAndArtist-link:hover {
-  text-decoration: underline;
+  background-color: #F0F0F0;
 }
 
 #songs article .song-title {
