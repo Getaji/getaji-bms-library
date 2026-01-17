@@ -118,6 +118,7 @@
 }
 
 .simpleBmsTable .content .irLinksInner>a {
+  padding: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,5 +257,16 @@
 } */
 
 .simpleBmsTable .content .comment {
-  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.simpleBmsTable .content .comment .comment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: #333333;
 }

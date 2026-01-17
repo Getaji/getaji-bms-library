@@ -11,6 +11,8 @@ export type SimpleSong = {
   comment: string;
   url: string;
   url_diff: string;
+  notes: number;
+  total: number;
 };
 
 export type Song = {

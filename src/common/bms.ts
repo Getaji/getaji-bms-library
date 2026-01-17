@@ -27,7 +27,7 @@ export function getBpmText(song: Song) {
 }
 
 export function calcTotal(notes: number) {
-  return Math.max(260.0, 7.605 * notes / (0.01 * notes + 6.5));
+  return Math.max(260.0, (7.605 * notes) / (0.01 * notes + 6.5));
 }
 
 type Feature = {

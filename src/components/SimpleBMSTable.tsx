@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { SimpleSong } from "../common/types";
 import {
+  calcTotal,
   makeLR2IRUrl,
   makeMochaUrl,
 } from "../common/bms";
@@ -94,7 +95,12 @@ export function BMSTable({ table }: Props) {
                 <td className="accuracy">
                   <span>{song.accuracy}</span>
                 </td>
-                <td className="comment">{song.comment}</td>
+                <td className="comment">
+                  <div className="comment-info">TOTAL:{song.total} ({(song.total / calcTotal(song.notes) * 100).toFixed(2)}% / {(song.total / song.notes).toFixed(2)})</div>
+                  <div className="comment-text">
+                    {song.comment}
+                  </div>
+                </td>
               </tr>
             ))}
           </Fragment>

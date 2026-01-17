@@ -65,6 +65,8 @@ query IndexPageTableDataQuery {
         comment
         url
         url_diff
+        notes
+        total
       }
     }
   }
