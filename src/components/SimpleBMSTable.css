@@ -8,6 +8,7 @@
 
 .simpleBmsTable th {
   padding: 8px;
+  word-break: keep-all;
 }
 
 .simpleBmsTable .header {
@@ -24,8 +25,8 @@
 .simpleBmsTable tbody .header {
   position: sticky;
   top: 0;
-  border: 1px solid #aaaaaa;
-  border-width: 1px 0;
+  outline: 1px solid #aaaaaa;
+  outline-width: 1px 0;
   font-size: 1rem;
   background-color: #fafafa;
 }
