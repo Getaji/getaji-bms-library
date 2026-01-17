@@ -74,11 +74,11 @@ const Page = ({ data }: PageProps<GraphQLResponse>) => {
                         <span className="song-artist">{song.artist}</span>
                       </a>
                     ) : (
-                      <>
+                      <span className="song-titleAndArtist-nolink">
                         <span className="song-title">{song.title}</span>
                         <span className="song-delimiter">/</span>
                         <span className="song-artist">{song.artist}</span>
-                      </>
+                      </span>
                     )
                   }
                 </div>

@@ -32,7 +32,7 @@ const Page = () => {
         <meta property="og:url" content="/about/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="この難易度表について | Getaji's BMS Library" />
-        <meta property="og:description" content="好きな曲の差分を収集し、難易度を推定して分類した7鍵用の難易度表です。" />
+        <meta property="og:description" content="好きなBMS楽曲の譜面を収集して難易度を推定・分類した7鍵用の難易度表です。" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@Getaji" />
       </Helmet>
