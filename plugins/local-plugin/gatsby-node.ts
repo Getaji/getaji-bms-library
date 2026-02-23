@@ -1,10 +1,16 @@
-import type { GatsbyNode, CreatePagesArgs, Reporter } from "gatsby";
+import type {
+  GatsbyNode,
+  CreatePagesArgs,
+  Reporter,
+  CreateWebpackConfigArgs,
+} from "gatsby";
 import { writeFile, copyFile, readFile } from "fs/promises";
 import path from "path";
 
 import type { Song } from "../../src/common/types";
 import { FOLDER_NAMES } from "../../src/common/common";
 import { createFilePath } from "gatsby-source-filesystem";
+import { realpathSync } from "fs";
 
 const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意", "All Song"];
 
@@ -68,10 +74,7 @@ async function generateAndSaveTableData(
   `);
 
   if (errors) {
-    reporter.panicOnBuild(
-      `譜面データの取得中にエラーが発生しました`,
-      errors,
-    );
+    reporter.panicOnBuild(`譜面データの取得中にエラーが発生しました`, errors);
     return;
   }
 
@@ -222,4 +225,15 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async () => {
     "./public/index.html",
     html.replace(`data-react-helmet="true" `, ""),
   );
+};
+
+let gatsbyNodeModules = realpathSync("node_modules/gatsby");
+gatsbyNodeModules = path.resolve(gatsbyNodeModules, "..");
+
+export const onCreateWebpackConfig = ({ actions }: CreateWebpackConfigArgs) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [gatsbyNodeModules, "node_modules"],
+    },
+  });
 };

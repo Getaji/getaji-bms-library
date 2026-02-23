@@ -84,9 +84,6 @@ importers:
       eslint-plugin-react:
         specifier: ^7.37.5
         version: 7.37.5(eslint@9.39.2)
-      gatsby-plugin-pnpm:
-        specifier: ^1.2.10
-        version: 1.2.10(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.2))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4))
       gatsby-plugin-react-helmet:
         specifier: ^6.13.1
         version: 6.13.1(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.2))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4))(react-helmet@6.1.0(react@18.3.1))
@@ -3365,11 +3362,6 @@ packages:
     peerDependencies:
       gatsby: ^5.0.0-next
 
-  gatsby-plugin-pnpm@1.2.10:
-    resolution: {integrity: sha512-29xjIakNEUY42OBb3wI9Thmawr5EcUUOB3dB8nE51yr/TfKQFCREk+HAOATQHTNedG3VZhgU4wVjl2V3wgOXJA==}
-    peerDependencies:
-      gatsby: ~2.x.x || ~3.x.x || ~4.x.x
-
   gatsby-plugin-react-helmet@6.13.1:
     resolution: {integrity: sha512-Fwgf2UDOo1LQgw1vUmGmDMK5hXVrIXDR92URzu4DylQWgyfycfQ3D9FdU2JZ8jB6F3OI6Yx6YHC7zL3OAL7iOw==}
     engines: {node: '>=18.0.0'}
@@ -4257,10 +4249,6 @@ packages:
 
   lodash.foreach@4.5.0:
     resolution: {integrity: sha512-aEXTF4d+m05rVOAUG3z4vZZ4xVexLKZGF0lIxuHZ1Hplpk/3B6Z1+/ICICYRLm7c41Z2xiejbkCkJoTlypoXhQ==}
-
-  lodash.get@4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.map@4.6.0:
     resolution: {integrity: sha512-worNHGKLDetmcEYDvh2stPCrrQRkP20E4l0iIS7F8EvzMqBBi7ltvFN5m1HvTf1P7Jk1txKhvFcmYsCr8O2F1Q==}
@@ -10776,12 +10764,6 @@ snapshots:
       - react-native-b4a
       - supports-color
 
-  gatsby-plugin-pnpm@1.2.10(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.2))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4)):
-    dependencies:
-      gatsby: 5.16.1(babel-eslint@10.1.0(eslint@9.39.2))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4)
-      lodash.get: 4.4.2
-      lodash.uniq: 4.5.0
-
   gatsby-plugin-react-helmet@6.13.1(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.2))(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.26.0)(typescript@5.5.4))(react-helmet@6.1.0(react@18.3.1)):
     dependencies:
       '@babel/runtime': 7.25.6
@@ -11984,8 +11966,6 @@ snapshots:
   lodash.flattendeep@4.4.0: {}
 
   lodash.foreach@4.5.0: {}
-
-  lodash.get@4.4.2: {}
 
   lodash.map@4.6.0: {}
 
