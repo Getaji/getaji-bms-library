@@ -1,10 +1,6 @@
 import React, { Fragment } from "react";
 import { SimpleSong } from "../common/types";
-import {
-  calcTotal,
-  makeLR2IRUrl,
-  makeMochaUrl,
-} from "../common/bms";
+import { calcTotal, makeLR2IRUrl, makeMochaUrl } from "../common/bms";
 import "./SimpleBMSTable.css";
 
 export type Props = {
@@ -79,27 +75,27 @@ export function BMSTable({ table }: Props) {
                   </a>
                 </td>
                 <td className="appendurlLink">
-                  {
-                    song.url_diff && (
-                      <a
-                        className="urlLinks-appendurl"
-                        href={song.url_diff}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        差分
-                      </a>
-                    )
-                  }
+                  {song.url_diff && (
+                    <a
+                      className="urlLinks-appendurl"
+                      href={song.url_diff}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      差分
+                    </a>
+                  )}
                 </td>
                 <td className="accuracy">
                   <span>{song.accuracy}</span>
                 </td>
                 <td className="comment">
-                  <div className="comment-info">TOTAL:{song.total} ({(song.total / calcTotal(song.notes) * 100).toFixed(2)}% / {(song.total / song.notes).toFixed(2)})</div>
-                  <div className="comment-text">
-                    {song.comment}
+                  <div className="comment-info">
+                    TOTAL:{song.total} (
+                    {((song.total / calcTotal(song.notes)) * 100).toFixed(2)}% /{" "}
+                    {(song.total / song.notes).toFixed(2)})
                   </div>
+                  <div className="comment-text">{song.comment}</div>
                 </td>
               </tr>
             ))}

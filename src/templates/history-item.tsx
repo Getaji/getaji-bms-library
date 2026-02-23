@@ -39,11 +39,14 @@ export const Head = () => (
     <meta property="og:url" content="/history/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="更新履歴 | Getaji's BMS Library" />
-    <meta property="og:description" content="楽曲・譜面の追加、難易度の変更、譜面の削除などの履歴を掲載しています。" />
+    <meta
+      property="og:description"
+      content="楽曲・譜面の追加、難易度の変更、譜面の削除などの履歴を掲載しています。"
+    />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@Getaji" />
   </>
-)
+);
 
 const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
   const article = data.article.edges[0].node;
@@ -51,29 +54,28 @@ const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
 
   return (
     <>
-      <title>更新履歴: {article.frontmatter.title} | Getaji's BMS Library</title>
+      <title>
+        更新履歴: {article.frontmatter.title} | Getaji's BMS Library
+      </title>
       <main id="history" className="document histories-page">
         <nav>
           <Link to="/">トップに戻る</Link>
         </nav>
-        <article id="historyArticle" dangerouslySetInnerHTML={{ __html: article.html }} />
+        <article
+          id="historyArticle"
+          dangerouslySetInnerHTML={{ __html: article.html }}
+        />
 
         <section className="histories">
           <h2>更新履歴一覧</h2>
           <ul>
             {histories.map(({ node }) => (
               <li key={node.id}>
-                {
-                  node.id === article.id ? (
-                    <span>
-                      {node.frontmatter.title} ←
-                    </span>
-                  ) : (
-                    <Link to={node.fields.slug}>
-                      {node.frontmatter.title}
-                    </Link>
-                  )
-                }
+                {node.id === article.id ? (
+                  <span>{node.frontmatter.title} ←</span>
+                ) : (
+                  <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                )}
               </li>
             ))}
           </ul>

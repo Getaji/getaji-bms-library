@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby"
+import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -12,19 +12,19 @@ const config: GatsbyConfig = {
     "gatsby-plugin-remove-generator",
     "gatsby-plugin-loadable-components-ssr",
     "gatsby-transformer-json",
-    `gatsby-transformer-remark`,
+    "gatsby-transformer-remark",
     {
-      resolve: `gatsby-source-sqlite`,
+      resolve: "gatsby-source-sqlite",
       options: {
-        fileName: './src/content/data.db',
+        fileName: "./src/content/data.db",
         queries: [
           {
-            statement: 'SELECT * FROM data',
-            idFieldName: 'sha256',
-            name: 'data'
-          }
-        ]
-      }
+            statement: "SELECT * FROM data",
+            idFieldName: "sha256",
+            name: "data",
+          },
+        ],
+      },
     },
     {
       resolve: "gatsby-source-filesystem",

@@ -90,19 +90,25 @@ export function BMSTable({ table }: Props) {
                       {(() => {
                         const total = Math.floor(song.total);
                         const calculatedTotal = Math.floor(
-                          calcTotal(song.notes)
+                          calcTotal(song.notes),
                         );
                         const diff = total - calculatedTotal;
                         const sign = diff >= 0 ? "+" : "";
                         const rate = ((total / calculatedTotal) * 100).toFixed(
-                          2
+                          2,
                         );
                         return `${sign + diff}/${rate}%`;
                       })()}
                       )
                     </div>
-                    <div className="info-judge" data-judge={getJudge(song.judge)}>
-                      判定: <span className="info-judge-text">{getJudge(song.judge)}({song.judge})</span>
+                    <div
+                      className="info-judge"
+                      data-judge={getJudge(song.judge)}
+                    >
+                      判定:{" "}
+                      <span className="info-judge-text">
+                        {getJudge(song.judge)}({song.judge})
+                      </span>
                     </div>
                   </div>
                   <div>

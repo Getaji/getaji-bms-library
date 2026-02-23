@@ -16,8 +16,14 @@ export const Head = () => (
     <head prefix="og: https://ogp.me/ns#" />
     <meta property="og:url" content="/about/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="この難易度表について | Getaji's BMS Library" />
-    <meta property="og:description" content="好きなBMS楽曲の譜面を収集して難易度を推定・分類した7鍵用の難易度表です。" />
+    <meta
+      property="og:title"
+      content="この難易度表について | Getaji's BMS Library"
+    />
+    <meta
+      property="og:description"
+      content="好きなBMS楽曲の譜面を収集して難易度を推定・分類した7鍵用の難易度表です。"
+    />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@Getaji" />
   </>
@@ -25,12 +31,10 @@ export const Head = () => (
 
 const Page = () => {
   const {
-    markdownRemark: {
-      html
-    },
+    markdownRemark: { html },
   } = useStaticQuery<GraphQLResponse>(graphql`
     query AboutQuery {
-      markdownRemark(frontmatter: {id: {eq: "about"}}) {
+      markdownRemark(frontmatter: { id: { eq: "about" } }) {
         html
       }
     }
@@ -48,7 +52,7 @@ const Page = () => {
         </article>
       </main>
     </>
-  )
+  );
 };
 
 export default Page;

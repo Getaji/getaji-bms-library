@@ -25,7 +25,7 @@ interface HistoriesPageData {
         excerpt: string;
         fields: {
           slug: string;
-        }
+        };
         frontmatter: {
           date: string;
           title: string;
@@ -42,7 +42,10 @@ export const Head = () => (
     <meta property="og:url" content="/history/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="更新履歴 | Getaji's BMS Library" />
-    <meta property="og:description" content="楽曲・譜面の追加、難易度の変更、譜面の削除などの履歴を掲載しています。" />
+    <meta
+      property="og:description"
+      content="楽曲・譜面の追加、難易度の変更、譜面の削除などの履歴を掲載しています。"
+    />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@Getaji" />
   </>
@@ -61,16 +64,17 @@ const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
 
         <header>更新履歴</header>
 
-        <article id="historyArticle" dangerouslySetInnerHTML={{ __html: latest.html }} />
+        <article
+          id="historyArticle"
+          dangerouslySetInnerHTML={{ __html: latest.html }}
+        />
 
         <section className="histories">
           <h2>更新履歴一覧</h2>
           <ul>
             {histories.map(({ node }) => (
               <li key={node.id}>
-                <Link to={node.fields.slug}>
-                  {node.frontmatter.title}
-                </Link>
+                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
               </li>
             ))}
           </ul>
@@ -83,9 +87,9 @@ const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
 export const query = graphql`
   query HistoriesQuery {
     latest: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/src/content/histories/"}}
-      limit: 1,
-      sort: {frontmatter: {date: DESC}}
+      filter: { fileAbsolutePath: { regex: "/src/content/histories/" } }
+      limit: 1
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {
@@ -99,7 +103,7 @@ export const query = graphql`
     }
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/content/histories/" } }
-      sort: {frontmatter: {date: DESC}}
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {
