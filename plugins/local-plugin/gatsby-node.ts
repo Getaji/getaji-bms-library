@@ -1,4 +1,4 @@
-import type { GatsbyNode, CreatePagesArgs } from "gatsby";
+import type { GatsbyNode, CreatePagesArgs, Reporter } from "gatsby";
 import { writeFile, copyFile, readFile } from "fs/promises";
 import path from "path";
 
@@ -34,6 +34,7 @@ interface HistoryNode {
 async function generateAndSaveTableData(
   graphql: CreatePagesArgs["graphql"],
   baseDir: string,
+  reporter: Reporter,
 ) {
   const { data, errors } = await graphql<GraphQLResponse>(`
     query TableDataQuery {
@@ -67,11 +68,17 @@ async function generateAndSaveTableData(
   `);
 
   if (errors) {
-    console.error(errors);
+    reporter.panicOnBuild(
+      `譜面データの取得中にエラーが発生しました`,
+      errors,
+    );
     return;
   }
 
-  if (!data) return;
+  if (!data) {
+    reporter.panicOnBuild("譜面が1件もありません");
+    return;
+  }
 
   const {
     allSqliteData: { edges },
@@ -137,7 +144,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   actions: { createPage },
   reporter,
 }) => {
-  await generateAndSaveTableData(graphql, basePath);
+  await generateAndSaveTableData(graphql, basePath, reporter);
 
   // ヒストリーページのテンプレートを取得
   const historyTemplate = path.resolve("src/templates/history-item.tsx");
