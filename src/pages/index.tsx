@@ -1,5 +1,4 @@
 import React from "react";
-import Helmet from "react-helmet";
 import loadable from "@loadable/component";
 import { graphql, Link, PageProps } from "gatsby";
 
@@ -73,6 +72,21 @@ query IndexPageTableDataQuery {
 }
 `
 
+export const Head = () => (
+  <>
+    <title>Getaji's BMS Library</title>
+    <meta name="bmstable" content="https://getaji-bms-library.pages.dev/table_header.json" />
+    <script src="https://kit.fontawesome.com/12c2830556.js" crossOrigin="anonymous"></script>
+    <head prefix="og: https://ogp.me/ns#" />
+    <meta property="og:url" content="/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Getaji's BMS Library" />
+    <meta property="og:description" content="好きなBMS楽曲の譜面を収集して難易度を推定・分類した7鍵用の難易度表です。" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@Getaji" />
+  </>
+)
+
 const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
   const updatedAt = data.latestHistory.edges[0].node.frontmatter.date;
   const songsCount = data.songsCount.totalCount;
@@ -105,18 +119,6 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
 
   return (
     <>
-      <Helmet>
-        <title>Getaji's BMS Library</title>
-        <meta name="bmstable" content="https://getaji-bms-library.pages.dev/table_header.json" />
-        <script src="https://kit.fontawesome.com/12c2830556.js" crossOrigin="anonymous"></script>
-        <head prefix="og: https://ogp.me/ns#" />
-        <meta property="og:url" content="/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Getaji's BMS Library" />
-        <meta property="og:description" content="好きなBMS楽曲の譜面を収集して難易度を推定・分類した7鍵用の難易度表です。" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:creator" content="@Getaji" />
-      </Helmet>
       <main id="index" className="app">
         <header>
           Getaji's BMS Library

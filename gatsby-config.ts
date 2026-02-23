@@ -9,7 +9,6 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-remove-generator",
     "gatsby-plugin-loadable-components-ssr",
     "gatsby-transformer-json",
