@@ -54,7 +54,8 @@
   },
   "overrides": {
     "gatsby-plugin-loadable-components-ssr": {
-      "gatsby": "^5.16.1"
+      "gatsby": "^5.16.1",
+      "react-dom": "^19.2.4"
     }
   },
   "browserslist": [
