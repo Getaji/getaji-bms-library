@@ -52,6 +52,11 @@
       "got@<11.8.5": ">=11.8.5"
     }
   },
+  "overrides": {
+    "gatsby-plugin-loadable-components-ssr": {
+      "gatsby": "^5.16.1"
+    }
+  },
   "browserslist": [
     ">0.25%",
     "not dead and supports es6-module"
