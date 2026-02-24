@@ -56,6 +56,9 @@
     "gatsby-plugin-loadable-components-ssr": {
       "gatsby": "^5.16.1",
       "react-dom": "^19.2.4"
+    },
+    "eslint-plugin-react": {
+      "eslint": "^10.0.2"
     }
   },
   "browserslist": [
