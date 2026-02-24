@@ -5,10 +5,10 @@
   "description": "getaji's bms library",
   "author": "Getaji",
   "scripts": {
-    "dev": "gatsby develop -p 8081",
-    "build": "gatsby build",
-    "serve": "gatsby serve -p 8081",
-    "clean": "gatsby clean",
+    "dev": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby develop -p 8081",
+    "build": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby build",
+    "serve": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby serve -p 8081",
+    "clean": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby clean",
     "lint": "eslint --ext .tsx,.ts src/",
     "typecheck": "tsc --noEmit"
   },
@@ -34,6 +34,7 @@
     "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
+    "cross-env": "^10.1.0",
     "eslint": "^10.0.2",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^17.3.0",
