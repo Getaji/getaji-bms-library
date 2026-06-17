@@ -19,7 +19,7 @@ export function BMSTable({ table }: Props) {
     <table className="simpleBmsTable">
       <thead>
         <tr className="header">
-          {/* <th className="genre">ジャンル</th> */}
+          <th className="folder">難易度</th>
           <th className="title">タイトル</th>
           <th className="artist">アーティスト</th>
           <th className="lr2irLink">IR</th>
@@ -43,7 +43,7 @@ export function BMSTable({ table }: Props) {
                 key={song.md5 || song.sha256}
                 data-accuracy={song.accuracy}
               >
-                {/* <td className="genre">{song.genre}</td> */}
+                <td className="folder">{folder}</td>
                 <td className="title">
                   {song.title} {song.subtitle}
                 </td>
