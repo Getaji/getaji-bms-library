@@ -49,7 +49,7 @@ export const query = graphql`
     songsCount: allSongsJson {
       totalCount
     }
-    charts: allSqliteData {
+    charts: allDataJson {
       edges {
         node {
           folder
