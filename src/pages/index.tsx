@@ -1,5 +1,4 @@
-import React from "react";
-import loadable from "@loadable/component";
+import React, { lazy, Suspense } from "react";
 import { graphql, Link, PageProps } from "gatsby";
 
 import { FOLDER_NAMES } from "../common/common";
@@ -8,8 +7,9 @@ import type { SimpleSong } from "../common/types";
 
 import "./global.css";
 import "./index.css";
+import LazyHydrate from "react-lazy-hydration";
 
-const SimpleBMSTable = loadable(() => import("../components/SimpleBMSTable"));
+const SimpleBMSTable = lazy(() => import("../components/SimpleBMSTable"));
 
 type GraphQLResponse = {
   latestHistory: {
@@ -162,7 +162,11 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
           </p>
         </section>
         <div id="tableContainer">
-          <SimpleBMSTable table={tableEntries} />
+          <Suspense fallback={<span>読み込み中...</span>}>
+            <LazyHydrate ssrOnly>
+              <SimpleBMSTable table={tableEntries} />
+            </LazyHydrate>
+          </Suspense>
         </div>
       </main>
     </>

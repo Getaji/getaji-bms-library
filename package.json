@@ -6,34 +6,33 @@
   "author": "Getaji",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby develop -p 8081",
-    "build": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby build",
+    "build": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby build --verbose",
     "serve": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby serve -p 8081",
     "clean": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby clean",
     "lint": "eslint --ext .tsx,.ts src/",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@loadable/component": "^5.16.7",
     "gatsby": "^5.16.1",
-    "gatsby-plugin-loadable-components-ssr": "^4.3.2",
     "gatsby-plugin-remove-generator": "^1.3.0",
     "gatsby-source-filesystem": "^5.16.0",
-    "gatsby-source-sqlite": "^1.0.0",
     "gatsby-transformer-json": "^5.16.0",
     "gatsby-transformer-remark": "6.16.0",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "react-lazy-hydration": "^0.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^10.0.1",
-    "@types/loadable__component": "^5.13.10",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^25.3.0",
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
+    "better-sqlite3": "^12.10.0",
     "cross-env": "^10.1.0",
     "eslint": "^10.0.2",
     "eslint-plugin-react": "^7.37.5",
@@ -53,10 +52,6 @@
     }
   },
   "overrides": {
-    "gatsby-plugin-loadable-components-ssr": {
-      "gatsby": "^5.16.1",
-      "react-dom": "^19.2.4"
-    },
     "eslint-plugin-react": {
       "eslint": "^10.0.2"
     }
