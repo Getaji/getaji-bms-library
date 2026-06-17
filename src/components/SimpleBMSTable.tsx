@@ -12,7 +12,7 @@ export function BMSTable({ table }: Props) {
     <table className="simpleBmsTable">
       <thead>
         <tr className="header">
-          <th className="genre">ジャンル</th>
+          {/* <th className="genre">ジャンル</th> */}
           <th className="title">タイトル</th>
           <th className="artist">アーティスト</th>
           <th className="lr2irLink">IR</th>
@@ -36,7 +36,7 @@ export function BMSTable({ table }: Props) {
                 key={song.md5 || song.sha256}
                 data-accuracy={song.accuracy}
               >
-                <td className="genre">{song.genre}</td>
+                {/* <td className="genre">{song.genre}</td> */}
                 <td className="title">
                   {song.title} {song.subtitle}
                 </td>
@@ -90,11 +90,11 @@ export function BMSTable({ table }: Props) {
                   <span>{song.accuracy}</span>
                 </td>
                 <td className="comment">
-                  <div className="comment-info">
+                  {/* <div className="comment-info">
                     TOTAL:{song.total} (
                     {((song.total / calcTotal(song.notes)) * 100).toFixed(2)}% /{" "}
                     {(song.total / song.notes).toFixed(2)})
-                  </div>
+                  </div> */}
                   <div className="comment-text">{song.comment}</div>
                 </td>
               </tr>
