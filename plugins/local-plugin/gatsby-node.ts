@@ -1,17 +1,25 @@
-import type { GatsbyNode, CreatePagesArgs } from "gatsby";
+import type {
+  GatsbyNode,
+  CreatePagesArgs,
+  Reporter,
+  CreateWebpackConfigArgs,
+} from "gatsby";
 import { writeFile, copyFile, readFile } from "fs/promises";
 import path from "path";
+import { realpathSync } from "fs";
 
-import type { Song } from "../../src/common/types";
+// export { sourceNodes } from "../sqlite/source-node";
+
+import type { SimpleSong } from "../../src/common/types";
 import { FOLDER_NAMES } from "../../src/common/common";
 import { createFilePath } from "gatsby-source-filesystem";
 
 const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意", "All Song"];
 
 type GraphQLResponse = {
-  allSqliteData: {
+  allDataJson: {
     edges: {
-      node: Song;
+      node: SimpleSong;
     }[];
   };
 };
@@ -34,13 +42,13 @@ interface HistoryNode {
 async function generateAndSaveTableData(
   graphql: CreatePagesArgs["graphql"],
   baseDir: string,
+  reporter: Reporter,
 ) {
   const { data, errors } = await graphql<GraphQLResponse>(`
     query TableDataQuery {
-      allSqliteData {
+      allDataJson {
         edges {
           node {
-            folder
             md5
             sha256
             genre
@@ -48,18 +56,12 @@ async function generateAndSaveTableData(
             subtitle
             artist
             subartist
-            content
-            level
-            difficulty
-            maxbpm
-            minbpm
-            mainbpm
-            length
-            judge
-            feature
+            folder
             comment
             url
             url_diff
+            notes
+            total
           }
         }
       }
@@ -67,14 +69,17 @@ async function generateAndSaveTableData(
   `);
 
   if (errors) {
-    console.error(errors);
+    reporter.panicOnBuild(`譜面データの取得中にエラーが発生しました`, errors);
     return;
   }
 
-  if (!data) return;
+  if (!data) {
+    reporter.panicOnBuild("譜面が1件もありません");
+    return;
+  }
 
   const {
-    allSqliteData: { edges },
+    allDataJson: { edges },
   } = data;
 
   const tableSongs = edges
@@ -137,7 +142,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
   actions: { createPage },
   reporter,
 }) => {
-  await generateAndSaveTableData(graphql, basePath);
+  reporter.verbose("Generating table data");
+  await generateAndSaveTableData(graphql, basePath, reporter);
+  
+  reporter.verbose("Generating history pages");
 
   // ヒストリーページのテンプレートを取得
   const historyTemplate = path.resolve("src/templates/history-item.tsx");
@@ -205,7 +213,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
 /**
  * ビルド完了にフックして難易度表ヘッダ部JSONをビルド結果の出力にコピーする。
  */
-export const onPostBuild: GatsbyNode["onPostBuild"] = async () => {
+export const onPostBuild: GatsbyNode["onPostBuild"] = async ({
+  reporter
+}) => {
+  reporter.verbose("Generating table header");
+
   // TODO: ビルド出力ディレクトリの変更に対応できるようにする
   await copyFile("./src/table_header.json", "./public/table_header.json");
 
@@ -215,4 +227,15 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async () => {
     "./public/index.html",
     html.replace(`data-react-helmet="true" `, ""),
   );
+};
+
+let gatsbyNodeModules = realpathSync("node_modules/gatsby");
+gatsbyNodeModules = path.resolve(gatsbyNodeModules, "..");
+
+export const onCreateWebpackConfig = ({ actions }: CreateWebpackConfigArgs) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [gatsbyNodeModules, "node_modules"],
+    },
+  });
 };

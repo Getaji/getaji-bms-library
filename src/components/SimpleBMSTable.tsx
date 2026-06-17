@@ -1,14 +1,17 @@
 import React, { Fragment } from "react";
 import { SimpleSong } from "../common/types";
-import {
-  calcTotal,
-  makeLR2IRUrl,
-  makeMochaUrl,
-} from "../common/bms";
+import { calcTotal, makeLR2IRUrl, makeMochaUrl } from "../common/bms";
 import "./SimpleBMSTable.css";
 
 export type Props = {
   table: [folder: string, songs: SimpleSong[]][];
+};
+
+const ACCURACY_MAP: Record<string, string> = {
+  "高": "🟢",
+  "中": "🟡",
+  "低": "🔴",
+  "？": "❓️",
 };
 
 export function BMSTable({ table }: Props) {
@@ -16,7 +19,7 @@ export function BMSTable({ table }: Props) {
     <table className="simpleBmsTable">
       <thead>
         <tr className="header">
-          <th className="genre">ジャンル</th>
+          <th className="folder">難易度</th>
           <th className="title">タイトル</th>
           <th className="artist">アーティスト</th>
           <th className="lr2irLink">IR</th>
@@ -40,7 +43,7 @@ export function BMSTable({ table }: Props) {
                 key={song.md5 || song.sha256}
                 data-accuracy={song.accuracy}
               >
-                <td className="genre">{song.genre}</td>
+                <td className="folder">{folder}</td>
                 <td className="title">
                   {song.title} {song.subtitle}
                 </td>
@@ -79,27 +82,27 @@ export function BMSTable({ table }: Props) {
                   </a>
                 </td>
                 <td className="appendurlLink">
-                  {
-                    song.url_diff && (
-                      <a
-                        className="urlLinks-appendurl"
-                        href={song.url_diff}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        差分
-                      </a>
-                    )
-                  }
+                  {song.url_diff && (
+                    <a
+                      className="urlLinks-appendurl"
+                      href={song.url_diff}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      差分
+                    </a>
+                  )}
                 </td>
                 <td className="accuracy">
-                  <span>{song.accuracy}</span>
+                  <span>{ACCURACY_MAP[song.accuracy]}</span>
                 </td>
                 <td className="comment">
-                  <div className="comment-info">TOTAL:{song.total} ({(song.total / calcTotal(song.notes) * 100).toFixed(2)}% / {(song.total / song.notes).toFixed(2)})</div>
-                  <div className="comment-text">
-                    {song.comment}
-                  </div>
+                  {/* <div className="comment-info">
+                    TOTAL:{song.total} (
+                    {((song.total / calcTotal(song.notes)) * 100).toFixed(2)}% /{" "}
+                    {(song.total / song.notes).toFixed(2)})
+                  </div> */}
+                  <div className="comment-text">{song.comment}</div>
                 </td>
               </tr>
             ))}
