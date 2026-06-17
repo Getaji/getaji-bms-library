@@ -7,6 +7,13 @@ export type Props = {
   table: [folder: string, songs: SimpleSong[]][];
 };
 
+const ACCURACY_MAP: Record<string, string> = {
+  "高": "🟢",
+  "中": "🟡",
+  "低": "🔴",
+  "？": "❓️",
+};
+
 export function BMSTable({ table }: Props) {
   return (
     <table className="simpleBmsTable">
@@ -87,7 +94,7 @@ export function BMSTable({ table }: Props) {
                   )}
                 </td>
                 <td className="accuracy">
-                  <span>{song.accuracy}</span>
+                  <span>{ACCURACY_MAP[song.accuracy]}</span>
                 </td>
                 <td className="comment">
                   {/* <div className="comment-info">
