@@ -6,7 +6,7 @@
   "author": "Getaji",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby develop -p 8081",
-    "build": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby build --verbose",
+    "build": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby build",
     "serve": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby serve -p 8081",
     "clean": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby clean",
     "lint": "eslint --ext .tsx,.ts src/",
