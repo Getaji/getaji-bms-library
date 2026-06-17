@@ -148,13 +148,13 @@ const IndexPage = ({ data }: PageProps<GraphQLResponse>) => {
           <p>{updatedAt} 更新</p>
           <nav id="indexNav">
             <Link className="navItem" to="/about">
-              詳細説明
+              📋 詳細説明
             </Link>
             <Link className="navItem" to="/songs">
-              楽曲一覧
+              🎵 楽曲一覧
             </Link>
             <Link className="navItem" to="/histories">
-              更新履歴
+              🚀 更新履歴
             </Link>
           </nav>
           <p>
