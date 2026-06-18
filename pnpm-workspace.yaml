@@ -1,3 +1,5 @@
+packages:
+  - "packages/*"
 allowBuilds:
   better-sqlite3: true
   core-js-pure: true
@@ -7,5 +9,5 @@ allowBuilds:
   gatsby-cli: true
   lmdb: true
   msgpackr-extract: true
-  '@parcel/watcher': true
+  "@parcel/watcher": true
   sharp: true
