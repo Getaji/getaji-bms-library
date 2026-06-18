@@ -1,2 +1,13 @@
 allowBuilds:
-- better-sqlite3
+  better-sqlite3: true
+  parcel/watcher: true
+  better-sqlite3: true
+  core-js-pure: true
+  core-js: true
+  es5-ext: true
+  gatsby-cli: true
+  gatsby: true
+  lmdb: true
+  lmdb: true
+  msgpackr-extract: true
+  sharp: true
