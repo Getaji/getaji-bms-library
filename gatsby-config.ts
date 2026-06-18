@@ -19,6 +19,23 @@ const config: GatsbyConfig = {
         fastHash: true,
       },
     },
+    {
+      resolve: 'gatsby-source-better-sqlite3',
+      options: {
+        // .db ファイルへのパス（プロジェクトルートからの相対パス、または絶対パス）
+        path: './src/content/data.db',
+
+        // 読み込むテーブルを指定（複数可）
+        tables: [
+          // シンプルな形式：テーブル名のみ指定
+          // → type名は自動生成（例: "posts" -> "SqlitePosts"）
+          'data',
+        ],
+
+        // 読み取り専用で開く（デフォルト: true）
+        readOnly: true,
+      },
+    },
     "local-plugin",
   ],
 };

@@ -49,7 +49,7 @@ export const query = graphql`
     songsCount: allSongsJson {
       totalCount
     }
-    charts: allDataJson {
+    charts: allSqliteData {
       edges {
         node {
           folder
@@ -75,10 +75,10 @@ export const query = graphql`
 export const Head = () => (
   <>
     <title>Getaji's BMS Library</title>
-    <meta
+    {/* <meta
       name="bmstable"
       content="https://getaji-bms-library.pages.dev/table_header.json"
-    />
+    /> */}
     <script
       src="https://kit.fontawesome.com/12c2830556.js"
       crossOrigin="anonymous"
