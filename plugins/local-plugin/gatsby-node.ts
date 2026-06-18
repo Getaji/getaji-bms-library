@@ -221,11 +221,12 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async ({
   // TODO: ビルド出力ディレクトリの変更に対応できるようにする
   await copyFile("./src/table_header.json", "./public/table_header.json");
 
+  // header.json指定用のメタタグを強制的に先頭に配置する
   const buffer = await readFile("./public/index.html");
   const html = buffer.toString("utf-8");
   await writeFile(
     "./public/index.html",
-    html.replace(`data-react-helmet="true" `, ""),
+    html.replace(`<head>`, `<head><meta name="bmstable" content="https://getaji-bms-library.pages.dev/table_header.json" />`),
   );
 };
 
