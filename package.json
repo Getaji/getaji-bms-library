@@ -43,5 +43,6 @@
   "browserslist": [
     ">0.25%",
     "not dead and supports es6-module"
-  ]
+  ],
+  "packageManager": "pnpm@11.8.0"
 }
