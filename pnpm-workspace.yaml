@@ -7,5 +7,5 @@ allowBuilds:
   gatsby-cli: true
   lmdb: true
   msgpackr-extract: true
-  parcel/watcher: true
+  @parcel/watcher: true
   sharp: true
