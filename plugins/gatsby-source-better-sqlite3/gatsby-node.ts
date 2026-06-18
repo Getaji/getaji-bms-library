@@ -1,6 +1,6 @@
-import path from 'path';
-import fs from 'fs';
-import Database, { Database as DatabaseType } from 'better-sqlite3';
+import path from "path";
+import fs from "fs";
+import Database, { Database as DatabaseType } from "better-sqlite3";
 
 import { GatsbyNode, Reporter, PluginOptions } from "gatsby";
 
@@ -10,9 +10,9 @@ import { GatsbyNode, Reporter, PluginOptions } from "gatsby";
  */
 function toPascalCase(str: string) {
   return str
-    .replace(/[-_]+/g, ' ')
+    .replace(/[-_]+/g, " ")
     .replace(/\s+(.)/g, (_, chr) => chr.toUpperCase())
-    .replace(/\s/g, '')
+    .replace(/\s/g, "")
     .replace(/^(.)/, (chr) => chr.toUpperCase());
 }
 
@@ -28,9 +28,12 @@ type EntryObject = {
 type MyPluginOptions = PluginOptions & {
   path: string;
   tables: (EntryObject | string)[];
-}
+};
 
-function validatePluginOptions(options: PluginOptions, reporter: Reporter): MyPluginOptions {
+function validatePluginOptions(
+  options: PluginOptions,
+  reporter: Reporter,
+): MyPluginOptions {
   if (typeof options.path !== "string") {
     reporter.panic("options.pathは文字列で指定してください。");
   }
@@ -39,7 +42,10 @@ function validatePluginOptions(options: PluginOptions, reporter: Reporter): MyPl
   return options as MyPluginOptions;
 }
 
-function validateEntries(entries: unknown, reporter: Reporter): (EntryObject | string)[] {
+function validateEntries(
+  entries: unknown,
+  reporter: Reporter,
+): (EntryObject | string)[] {
   if (!Array.isArray(entries)) {
     reporter.panic("options.tablesは配列で指定してください。");
   }
@@ -49,7 +55,9 @@ function validateEntries(entries: unknown, reporter: Reporter): (EntryObject | s
       return true;
     }
     if (typeof entry !== "object") {
-      reporter.panic("options.tablesの各要素は文字列かオブジェクトでなければなりません。");
+      reporter.panic(
+        "options.tablesの各要素は文字列かオブジェクトでなければなりません。",
+      );
       return false;
     }
     if (typeof entry.tableName !== "string") {
@@ -76,18 +84,18 @@ function validateEntries(entries: unknown, reporter: Reporter): (EntryObject | s
  */
 function normalizeTableConfigs(tables: (EntryObject | string)[]) {
   return tables.map((entry) => {
-    if (typeof entry === 'string') {
+    if (typeof entry === "string") {
       return {
         tableName: entry,
         type: `Sqlite${toPascalCase(entry)}`,
-        idField: 'id',
+        idField: "id",
       };
     }
 
     return {
       tableName: entry.tableName,
       type: entry.type || `Sqlite${toPascalCase(entry.tableName)}`,
-      idField: entry.idField || 'id',
+      idField: entry.idField || "id",
     };
   });
 }
@@ -96,12 +104,14 @@ function normalizeTableConfigs(tables: (EntryObject | string)[]) {
  * pluginOptions の検証スキーマ。
  * `gatsby-config.js` に渡されたオプションの型チェック・必須項目チェックに使われる。
  */
-export const pluginOptionsSchema: GatsbyNode["pluginOptionsSchema"] = ({ Joi }) => {
+export const pluginOptionsSchema: GatsbyNode["pluginOptionsSchema"] = ({
+  Joi,
+}) => {
   return Joi.object({
     path: Joi.string()
       .required()
       .description(
-        '読み込む .db ファイルへのパス（プロジェクトルートからの相対パス、または絶対パス）'
+        "読み込む .db ファイルへのパス（プロジェクトルートからの相対パス、または絶対パス）",
       ),
     tables: Joi.array()
       .items(
@@ -111,17 +121,19 @@ export const pluginOptionsSchema: GatsbyNode["pluginOptionsSchema"] = ({ Joi }) 
             tableName: Joi.string().required(),
             type: Joi.string(),
             idField: Joi.string(),
-          })
-        )
+          }),
+        ),
       )
       .min(1)
       .required()
       .description(
-        '読み込む対象のテーブル名のリスト。文字列、または { tableName, type, idField } の形で指定可能。'
+        "読み込む対象のテーブル名のリスト。文字列、または { tableName, type, idField } の形で指定可能。",
       ),
     readOnly: Joi.boolean()
       .default(true)
-      .description('true の場合、SQLiteファイルを読み取り専用で開く（デフォルト: true）。'),
+      .description(
+        "true の場合、SQLiteファイルを読み取り専用で開く（デフォルト: true）。",
+      ),
   });
 };
 
@@ -131,7 +143,7 @@ export const pluginOptionsSchema: GatsbyNode["pluginOptionsSchema"] = ({ Joi }) 
  */
 export const sourceNodes: GatsbyNode["sourceNodes"] = async (
   { actions, createNodeId, createContentDigest, reporter },
-  pluginOptions
+  pluginOptions,
 ) => {
   const { createNode } = actions;
 
@@ -143,7 +155,7 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (
 
   if (!fs.existsSync(dbPath)) {
     reporter.panic(
-      `gatsby-source-better-sqlite3: データベースファイルが見つかりません: "${dbPath}"。pluginOptions.path を確認してください。`
+      `gatsby-source-better-sqlite3: データベースファイルが見つかりません: "${dbPath}"。pluginOptions.path を確認してください。`,
     );
     return;
   }
@@ -151,7 +163,7 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (
   const tableConfigs = normalizeTableConfigs(options.tables);
 
   const activity = reporter.activityTimer(
-    'gatsby-source-better-sqlite3: テーブルを読み込み中'
+    "gatsby-source-better-sqlite3: テーブルを読み込み中",
   );
   activity.start();
 
@@ -167,17 +179,19 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (
       let rows;
 
       try {
-        rows = db.prepare<[], Record<string, unknown>>(`SELECT * FROM "${tableName}"`).all();
+        rows = db
+          .prepare<[], Record<string, unknown>>(`SELECT * FROM "${tableName}"`)
+          .all();
       } catch (err) {
         reporter.panicOnBuild(
           `gatsby-source-better-sqlite3: テーブル "${tableName}" の読み込みに失敗しました。テーブル名が正しいか確認してください。`,
-          err as Error | Error[]
+          err as Error | Error[],
         );
         continue;
       }
 
       reporter.info(
-        `gatsby-source-better-sqlite3: "${tableName}" から ${rows.length} 行を読み込み、type "${type}" として作成します`
+        `gatsby-source-better-sqlite3: "${tableName}" から ${rows.length} 行を読み込み、type "${type}" として作成します`,
       );
 
       rows.forEach((row, index) => {
