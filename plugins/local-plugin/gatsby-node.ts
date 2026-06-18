@@ -139,7 +139,7 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
   basePath,
-  actions: { createPage },
+  actions: { createPage, createSlice },
   reporter,
 }) => {
   reporter.verbose("Generating table data");
@@ -190,24 +190,27 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const histories = result.data.allMarkdownRemark.edges;
 
-  // 各履歴ページを生成
-  if (histories.length > 0) {
-    histories.forEach((history, index) => {
-      const previousPostId =
-        index === histories.length - 1 ? null : histories[index + 1].node.id;
-      const nextPostId = index === 0 ? null : histories[index - 1].node.id;
-
-      createPage({
-        path: history.node.fields.slug,
-        component: historyTemplate,
-        context: {
-          id: history.node.id,
-          previousPostId,
-          nextPostId,
-        },
-      });
-    });
+  if (histories.length === 0) {
+    reporter.panicOnBuild("履歴データが存在しません。");
+    return;
   }
+
+  // 各履歴ページを生成
+  histories.forEach((history, index) => {
+    const previousPostId =
+      index === histories.length - 1 ? null : histories[index + 1].node.id;
+    const nextPostId = index === 0 ? null : histories[index - 1].node.id;
+
+    createPage({
+      path: history.node.fields.slug,
+      component: historyTemplate,
+      context: {
+        id: history.node.id,
+        previousPostId,
+        nextPostId,
+      },
+    });
+  });
 };
 
 /**
