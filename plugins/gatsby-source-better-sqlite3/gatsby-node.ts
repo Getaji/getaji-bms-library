@@ -21,7 +21,7 @@ function toPascalCase(str: string) {
  */
 type EntryObject = {
   tableName: string;
-  type: string;
+  type?: string;
   idField: string;
 };
 
@@ -64,11 +64,11 @@ function validateEntries(
       reporter.panic("options.tablesの要素のオブジェクト型が間違っています。");
       return false;
     }
-    if (typeof entry.type !== "string") {
+    if (entry.type != null && typeof entry.type !== "string") {
       reporter.panic("options.tablesの要素のオブジェクト型が間違っています。");
       return false;
     }
-    if (typeof entry.idField !== "string") {
+    if (entry.type != null && typeof entry.idField !== "string") {
       reporter.panic("options.tablesの要素のオブジェクト型が間違っています。");
       return false;
     }
@@ -190,7 +190,7 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (
         continue;
       }
 
-      reporter.info(
+      reporter.verbose(
         `gatsby-source-better-sqlite3: "${tableName}" から ${rows.length} 行を読み込み、type "${type}" として作成します`,
       );
 

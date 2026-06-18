@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-better-sqlite3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gatsby v5 source plugin that reads rows from a local SQLite (.db) file via better-sqlite3 and creates Gatsby nodes from them.",
   "main": "gatsby-node.js",
   "keywords": [
@@ -10,7 +10,7 @@
     "sqlite",
     "better-sqlite3"
   ],
-  "author": "",
+  "author": "Getaji",
   "license": "MIT",
   "dependencies": {
     "@types/better-sqlite3": "^7.6.13",
