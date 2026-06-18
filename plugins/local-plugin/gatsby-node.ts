@@ -17,7 +17,7 @@ import { createFilePath } from "gatsby-source-filesystem";
 const EXCLUDE_FOLDERS = ["Fav Charts", "ホラー注意", "All Song"];
 
 type GraphQLResponse = {
-  allDataJson: {
+  allSqliteData: {
     edges: {
       node: SimpleSong;
     }[];
@@ -46,7 +46,7 @@ async function generateAndSaveTableData(
 ) {
   const { data, errors } = await graphql<GraphQLResponse>(`
     query TableDataQuery {
-      allDataJson {
+      allSqliteData {
         edges {
           node {
             md5
@@ -79,7 +79,7 @@ async function generateAndSaveTableData(
   }
 
   const {
-    allDataJson: { edges },
+    allSqliteData: { edges },
   } = data;
 
   const tableSongs = edges
