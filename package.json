@@ -40,22 +40,6 @@
     "prop-types": "^15.8.1",
     "typescript": "^5.9.3"
   },
-  "pnpm": {
-    "overrides": {
-      "ansi-html@<0.0.8": ">=0.0.8",
-      "node-fetch@<2.6.7": ">=2.6.7",
-      "cross-fetch@>=3.0.0 <3.1.5": ">=3.1.5",
-      "ws@>=7.0.0 <7.4.6": ">=7.4.6",
-      "dicer@<=0.3.1": ">=0.3.1",
-      "jpeg-js@<0.4.4": ">=0.4.4",
-      "got@<11.8.5": ">=11.8.5"
-    }
-  },
-  "overrides": {
-    "eslint-plugin-react": {
-      "eslint": "^10.0.2"
-    }
-  },
   "browserslist": [
     ">0.25%",
     "not dead and supports es6-module"
