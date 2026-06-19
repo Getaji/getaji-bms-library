@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { SimpleSong } from "../common/types";
-import { calcTotal, makeLR2IRUrl, makeMochaUrl } from "../common/bms";
+import { makeLR2IRUrl, makeMochaUrl } from "../common/bms";
 import "./SimpleBMSTable.css";
 
 export type Props = {

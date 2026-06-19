@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { graphql, Link, PageProps } from "gatsby";
 import loadable from "@loadable/component";
 
