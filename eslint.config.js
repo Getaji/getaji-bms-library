@@ -1,6 +1,4 @@
-const {
-    defineConfig,
-} = require("eslint/config");
+const { defineConfig } = require("eslint/config");
 
 const globals = require("globals");
 const tsParser = require("@typescript-eslint/parser");
@@ -8,53 +6,53 @@ const react = require("eslint-plugin-react");
 const typescriptEslint = require("@typescript-eslint/eslint-plugin");
 const js = require("@eslint/js");
 
-const {
-    FlatCompat,
-} = require("@eslint/eslintrc");
+const { FlatCompat } = require("@eslint/eslintrc");
 
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
-module.exports = defineConfig([{
+module.exports = defineConfig([
+  {
     languageOptions: {
-        globals: {
-            ...globals.browser,
-        },
+      globals: {
+        ...globals.browser,
+      },
 
-        parser: tsParser,
-        "ecmaVersion": "latest",
-        "sourceType": "module",
+      parser: tsParser,
+      ecmaVersion: "latest",
+      sourceType: "module",
 
-        parserOptions: {
-            "ecmaFeatures": {
-                "jsx": true,
-            },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
         },
+      },
     },
 
     extends: compat.extends(
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
     ),
 
     plugins: {
-        react,
-        "@typescript-eslint": typescriptEslint,
+      react,
+      "@typescript-eslint": typescriptEslint,
     },
 
-    "rules": {
-        "react/react-in-jsx-scope": "off",
-        "react/no-unescaped-entities": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
+    rules: {
+      "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
     },
 
-    "settings": {
-        "react": {
-            "version": "detect",
-        },
+    settings: {
+      react: {
+        version: "detect",
+      },
     },
-}]);
+  },
+]);

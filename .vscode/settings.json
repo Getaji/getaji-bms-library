@@ -1,0 +1,12 @@
+{
+  "formatFiles.excludedFolders": [
+    ".cache",
+    ".chrome",
+    ".git",
+    ".vscode",
+    "dist",
+    "lighthouse-score",
+    "node_modules",
+    "public"
+  ]
+}

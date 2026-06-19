@@ -1,7 +1,10 @@
 import { Song } from "./types";
 
-export const makeLR2IRUrl = (md5: string) => "http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + md5;
-export const makeMochaUrl = (sha256: string) => "https://mocha-repository.info/song.php?sha256=" + sha256;
+export const makeLR2IRUrl = (md5: string) =>
+  "http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" +
+  md5;
+export const makeMochaUrl = (sha256: string) =>
+  "https://mocha-repository.info/song.php?sha256=" + sha256;
 
 export const JUDGE_RANK_MAP: Record<string, string> = {
   "100": "EASY",
@@ -16,7 +19,7 @@ export const getJudge = (judge: number) => {
   if (judge <= 75) return "NORMAL";
   if (judge <= 100) return "EASY";
   return "VERYEASY";
-}
+};
 
 export function getBpmText(song: Song) {
   if (song.minbpm === song.maxbpm) {
@@ -37,12 +40,7 @@ type Feature = {
   en: string;
 };
 
-function feature(
-  num: number,
-  id: string,
-  jp: string,
-  en: string
-) {
+function feature(num: number, id: string, jp: string, en: string) {
   return { num, id, jp, en };
 }
 
@@ -63,6 +61,6 @@ export function getFeatures(song: Song) {
 
 export function getTimeString(song: Song) {
   const minutes = Math.floor(song.length / (60 * 1000));
-  const seconds = Math.floor(song.length % (60 * 1000) / 1000);
+  const seconds = Math.floor((song.length % (60 * 1000)) / 1000);
   return minutes + ":" + String(seconds).padStart(2, "0");
 }
