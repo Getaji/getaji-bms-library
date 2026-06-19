@@ -4,6 +4,7 @@
   "private": true,
   "description": "getaji's bms library",
   "author": "Getaji",
+  "type": "module",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby develop -p 8081",
     "build": "cross-env NODE_OPTIONS=\"--no-warnings=DEP0040\" gatsby build",
