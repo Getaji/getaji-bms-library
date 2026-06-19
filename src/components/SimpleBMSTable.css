@@ -69,12 +69,6 @@
   width: 2em;
 }
 
-.simpleBmsTable .content .level {
-  font-family: Impact, Arial, sans-serif;
-  font-size: 1rem;
-  text-align: center;
-}
-
 .simpleBmsTable .content .irLinks {
   padding: 0;
   height: 0;
