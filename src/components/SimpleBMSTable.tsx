@@ -41,7 +41,6 @@ export function BMSTable({ table }: Props) {
               <tr
                 className="content"
                 key={song.md5 || song.sha256}
-                data-accuracy={song.accuracy}
               >
                 <td className="folder">{folder}</td>
                 <td className="title">
@@ -97,11 +96,6 @@ export function BMSTable({ table }: Props) {
                   <span>{ACCURACY_MAP[song.accuracy]}</span>
                 </td>
                 <td className="comment">
-                  {/* <div className="comment-info">
-                    TOTAL:{song.total} (
-                    {((song.total / calcTotal(song.notes)) * 100).toFixed(2)}% /{" "}
-                    {(song.total / song.notes).toFixed(2)})
-                  </div> */}
                   <div className="comment-text">{song.comment}</div>
                 </td>
               </tr>

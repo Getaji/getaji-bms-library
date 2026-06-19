@@ -11,6 +11,7 @@ import "./index.css";
 
 const SimpleBMSTable = loadable(() => import("../components/SimpleBMSTable"), {
   fallback: <div>Loading...</div>,
+  ssr: false,
 });
 
 type GraphQLResponse = {
