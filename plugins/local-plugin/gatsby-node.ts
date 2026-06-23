@@ -144,7 +144,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
   reporter.verbose("Generating table data");
   await generateAndSaveTableData(graphql, basePath, reporter);
-  
+
   reporter.verbose("Generating history pages");
 
   // ヒストリーページのテンプレートを取得
@@ -216,9 +216,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 /**
  * ビルド完了にフックして難易度表ヘッダ部JSONをビルド結果の出力にコピーする。
  */
-export const onPostBuild: GatsbyNode["onPostBuild"] = async ({
-  reporter
-}) => {
+export const onPostBuild: GatsbyNode["onPostBuild"] = async ({ reporter }) => {
   reporter.verbose("Generating table header");
 
   // TODO: ビルド出力ディレクトリの変更に対応できるようにする
@@ -229,7 +227,10 @@ export const onPostBuild: GatsbyNode["onPostBuild"] = async ({
   const html = buffer.toString("utf-8");
   await writeFile(
     "./public/index.html",
-    html.replace(`<head>`, `<head><meta name="bmstable" content="https://getaji-bms-library.pages.dev/table_header.json" />`),
+    html.replace(
+      `<head>`,
+      `<head><meta name="bmstable" content="https://getaji-bms-library.pages.dev/table_header.json" />`,
+    ),
   );
 };
 

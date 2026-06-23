@@ -3,6 +3,7 @@ import fs from "fs";
 import Database, { Database as DatabaseType } from "better-sqlite3";
 
 import { GatsbyNode, Reporter, PluginOptions } from "gatsby";
+import { Either } from "../../src/common/either";
 
 /**
  * "blog_posts" -> "BlogPosts", "users" -> "Users" のように
@@ -33,49 +34,39 @@ type MyPluginOptions = PluginOptions & {
 function validatePluginOptions(
   options: PluginOptions,
   reporter: Reporter,
-): MyPluginOptions {
+): Either<string[], MyPluginOptions> {
+  const errorStack: string[] = [];
   if (typeof options.path !== "string") {
-    reporter.panic("options.pathは文字列で指定してください。");
-  }
-  validateEntries(options.tables, reporter);
-
-  return options as MyPluginOptions;
-}
-
-function validateEntries(
-  entries: unknown,
-  reporter: Reporter,
-): (EntryObject | string)[] {
-  if (!Array.isArray(entries)) {
-    reporter.panic("options.tablesは配列で指定してください。");
+    errorStack.push("pathは文字列で指定してください。");
   }
 
-  entries.some((entry) => {
+  if (!Array.isArray(options.tables)) {
+    errorStack.push("tablesは配列で指定してください。");
+    return Either.left(errorStack);
+  }
+
+  options.tables.forEach((entry, i) => {
     if (typeof entry === "string") {
-      return true;
+      return;
     }
     if (typeof entry !== "object") {
-      reporter.panic(
-        "options.tablesの各要素は文字列かオブジェクトでなければなりません。",
+      errorStack.push(
+        "tablesの各要素は文字列かオブジェクトでなければなりません。",
       );
-      return false;
+      return;
     }
     if (typeof entry.tableName !== "string") {
-      reporter.panic("options.tablesの要素のオブジェクト型が間違っています。");
-      return false;
+      errorStack.push(`[${i}]tableNameが指定されていないか、または文字列ではありません`);
     }
     if (entry.type != null && typeof entry.type !== "string") {
-      reporter.panic("options.tablesの要素のオブジェクト型が間違っています。");
-      return false;
+      errorStack.push(`[${i}]typeが文字列ではありません`);
     }
     if (entry.type != null && typeof entry.idField !== "string") {
-      reporter.panic("options.tablesの要素のオブジェクト型が間違っています。");
-      return false;
+      errorStack.push(`[${i}]idFieldが文字列ではありません`);
     }
-    return true;
   });
 
-  return entries as (EntryObject | string)[];
+  return errorStack.length ? Either.left(errorStack) : Either.right(options as MyPluginOptions);
 }
 
 /**
@@ -149,9 +140,13 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (
 
   const options = validatePluginOptions(pluginOptions, reporter);
 
-  const dbPath = path.isAbsolute(options.path)
-    ? options.path
-    : path.join(process.cwd(), options.path);
+  if (options.isLeft) {
+    reporter.panic("pluginOptionsの指定に誤りがあります:" + options.left.map((e) => "- " + e).join("\n"));
+  }
+
+  const dbPath = path.isAbsolute(options.right.path)
+    ? options.right.path
+    : path.join(process.cwd(), options.right.path);
 
   if (!fs.existsSync(dbPath)) {
     reporter.panic(
@@ -160,7 +155,7 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async (
     return;
   }
 
-  const tableConfigs = normalizeTableConfigs(options.tables);
+  const tableConfigs = normalizeTableConfigs(options.right.tables);
 
   const activity = reporter.activityTimer(
     "gatsby-source-better-sqlite3: テーブルを読み込み中",

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { graphql, Link, PageProps } from "gatsby";
 import loadable from "@loadable/component";
 
@@ -11,6 +11,7 @@ import "./index.css";
 
 const SimpleBMSTable = loadable(() => import("../components/SimpleBMSTable"), {
   fallback: <div>Loading...</div>,
+  ssr: false,
 });
 
 type GraphQLResponse = {

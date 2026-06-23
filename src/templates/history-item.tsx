@@ -33,12 +33,15 @@ interface HistoriesPageData {
   };
 }
 
-export const Head = () => (
+export const Head: React.FC<PageProps<HistoriesPageData>> = ({ data }) => (
   <>
     <head prefix="og: https://ogp.me/ns#" />
     <meta property="og:url" content="/history/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="更新履歴 | Getaji's BMS Library" />
+      <title>
+        更新履歴: {data.article.edges[0].node.frontmatter.title} | Getaji's BMS Library
+      </title>
+      <meta property="og:title" content={`更新履歴: ${data.article.edges[0].node.frontmatter.title} | Getaji's BMS Library`} />
     <meta
       property="og:description"
       content="楽曲・譜面の追加、難易度の変更、譜面の削除などの履歴を掲載しています。"
@@ -54,9 +57,6 @@ const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
 
   return (
     <>
-      <title>
-        更新履歴: {article.frontmatter.title} | Getaji's BMS Library
-      </title>
       <main id="history" className="document histories-page">
         <nav>
           <Link to="/">トップに戻る</Link>
