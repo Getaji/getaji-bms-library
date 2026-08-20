@@ -1,6 +1,8 @@
 #history {
   max-width: 600px;
   margin: 0 auto 60px;
+  padding-top: 8px;
+  font-size: 0.9rem;
 }
 
 #history nav {
@@ -8,9 +10,8 @@
 }
 
 #historyArticle {
-  margin: 30px 0 60px;
+  margin: 30px 0;
   padding-bottom: 30px;
-  border-bottom: 1px solid #aaaaaa;
   font-size: 1rem;
 }
 
@@ -28,4 +29,26 @@
 
 #historyArticle .table_replaceChart table th:nth-of-type(n+2) {
   width: 50%;
+}
+
+#history #navPrevAndNextHistories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+#history .navHistory {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#history #navPrevAndNextHistories .navHistory_arrow {
+  font-size: 26px;
+  color: #888888;
+}
+
+#history #navPrevAndNextHistories .navHistory_link {
+  font-size: 16px;
 }

@@ -38,22 +38,34 @@ export const Head: React.FC<PageProps<HistoriesPageData>> = ({ data }) => (
     <head prefix="og: https://ogp.me/ns#" />
     <meta property="og:url" content="/history/" />
     <meta property="og:type" content="website" />
-      <title>
-        更新履歴: {data.article.edges[0].node.frontmatter.title} | Getaji's BMS Library
-      </title>
-      <meta property="og:title" content={`更新履歴: ${data.article.edges[0].node.frontmatter.title} | Getaji's BMS Library`} />
+    <title>
+      更新履歴: {data.article.edges[0].node.frontmatter.title} | Getaji's BMS
+      Library
+    </title>
+    <meta
+      property="og:title"
+      content={`更新履歴: ${data.article.edges[0].node.frontmatter.title} | Getaji's BMS Library`}
+    />
     <meta
       property="og:description"
       content="楽曲・譜面の追加、難易度の変更、譜面の削除などの履歴を掲載しています。"
     />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@Getaji" />
+    <script
+      src="https://kit.fontawesome.com/12c2830556.js"
+      crossOrigin="anonymous"
+    />
   </>
 );
 
 const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
   const article = data.article.edges[0].node;
   const histories = data.allMarkdownRemark.edges;
+
+  const index = histories.findIndex((h) => h.node.id === article.id);
+  const prev = histories[index + 1];
+  const next = histories[index - 1];
 
   return (
     <>
@@ -65,6 +77,32 @@ const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
           id="historyArticle"
           dangerouslySetInnerHTML={{ __html: article.html }}
         />
+
+        <nav id="navPrevAndNextHistories">
+          {prev && (
+            <div id="navPrevHistory" className="navHistory">
+              <i
+                id="navPrevHistory_left"
+                className="fa-solid fa-chevron-left navHistory_arrow"
+              />
+              <Link className="navHistory_link" to={prev.node.fields.slug}>
+                {prev.node.frontmatter.title}
+              </Link>
+            </div>
+          )}
+          <i className="fa-solid fa-minus" />
+          {next && (
+            <div id="navNextHistory" className="navHistory">
+              <Link className="navHistory_link" to={next.node.fields.slug}>
+                {next.node.frontmatter.title}
+              </Link>
+              <i
+                id="navPrevHistory_right"
+                className="fa-solid fa-chevron-right navHistory_arrow"
+              />
+            </div>
+          )}
+        </nav>
 
         <section className="histories">
           <h2>更新履歴一覧</h2>

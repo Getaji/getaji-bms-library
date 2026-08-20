@@ -10,6 +10,7 @@ interface HistoriesPageData {
   latest: {
     edges: {
       node: {
+        id: string;
         frontmatter: {
           date: string;
           title: string;
@@ -69,12 +70,23 @@ const HistoriesPage: React.FC<PageProps<HistoriesPageData>> = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: latest.html }}
         />
 
+        <div id="navPrevHistory">
+          <span>&lt;</span>
+          <span>prev:</span>
+          <Link to={histories[1].node.fields.slug}>{histories[1].node.frontmatter.title}</Link>
+          <span>&gt;</span>
+        </div>
+
         <section className="histories">
           <h2>更新履歴一覧</h2>
           <ul>
-            {histories.map(({ node }) => (
+            {histories.map(({ node }, i) => (
               <li key={node.id}>
-                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                {i === 0 ? (
+                  <span>{node.frontmatter.title} ←</span>
+                ) : (
+                  <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                )}
               </li>
             ))}
           </ul>
@@ -93,6 +105,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
           frontmatter {
             date
             title

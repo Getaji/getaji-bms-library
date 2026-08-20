@@ -18,3 +18,9 @@
 #histories article {
   margin-top: 60px;
 }
+
+#histories > #navPrevHistory {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
