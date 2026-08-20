@@ -100,6 +100,10 @@
   text-decoration: none;
 }
 
+.simpleBmsTable .content .irLinks .mochaRepository i {
+  width: 18px;
+}
+
 .simpleBmsTable .content .urlLink,
 .simpleBmsTable .content .appendurlLink {
 	padding: 0;

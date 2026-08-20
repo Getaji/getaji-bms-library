@@ -62,6 +62,7 @@ export function BMSTable({ table }: Props) {
                       IR
                     </a>
                     <a
+                      className="mochaRepository"
                       href={makeMochaUrl(song.sha256)}
                       target="_blank"
                       rel="noopener noreferrer"
